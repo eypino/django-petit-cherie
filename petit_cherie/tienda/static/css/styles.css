@@ -1,0 +1,135 @@
+
+.navbar-dark .navbar-nav .nav-link{
+    color:antiquewhite !important;
+    font-size:20px;
+    
+}
+body{
+    /*background: rgb(232, 212, 233);*/
+    background-color: rgb(232, 212, 233);
+  }
+
+.bg{
+    background-image: url(../img/login_pic.jpg);
+    background-position: center center;
+  
+  }
+
+.body-background{
+    background-color: black !important;
+}
+.body-background2{
+    background-color:rgb(232, 212, 233);
+}
+.carrito{
+    min-height: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.table-productos{
+    display:flexbox;
+}
+.table-productos {
+    width: 30%;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+.table-cantidad{
+    width: 30%;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.table-precio{
+    max-width: 200px;
+    width: 30%;
+}
+.img-carrito{
+    width: 50%;
+    height: 50%;
+    align-self: center;
+}
+
+  footer{
+    padding: 0% !important;
+    margin: 0% !important;
+    text-align: center;
+    background-color:#212F3D;
+    color: whitesmoke;
+    font-size: 15px;
+  }
+.navbar-dark .navbar-brand{
+    color: purple !important;
+    font-size: 40px;
+}
+
+.nav-item{
+    padding-right: 5px;
+}
+
+
+.header-visible{
+    height: 10%;
+    min-height: 136px;
+    --background-image: url(../img/carrusel1.jpg);
+}
+
+@media only screen and(max-width:600px){
+    .navbar-dark .navbar-brand{
+        color: purple !important;
+        font-size: 25px;
+    }
+}
+
+.navbar-toggler{
+    --border:none !important;
+    color: purple !important;
+    border-color:purple !important;
+    background-color: purple !important;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+
+ .btn-dark{
+    font-size: 20px !important;
+    color: white !important;
+    background-color: purple !important;
+
+}
+
+.dropdown-menu{
+    background-color: purple !important;
+}
+
+
+.dropdown-item{
+    color: white !important;
+}
+
+.table{
+    color:purple !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-self: center;
+    max-width: 90%;
+}
+
+.text-carrito{
+    color: purple;
+    font-weight: bold;
+}
+
+/*QUITAR FLECHAS DEL INPUT NUMBER*/  
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
