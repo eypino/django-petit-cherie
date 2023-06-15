@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 
-# Create your views here.
+# Create your views here.z
 def index(request):
     tiendas=tienda.objects.all()
     context={'tiendas':tiendas}
