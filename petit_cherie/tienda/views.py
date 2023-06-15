@@ -13,3 +13,11 @@ def index(request):
 def tienda (request):
     template = loader.get_template('tienda.html')
     return HttpResponse(template.render())
+
+def carrito(request):
+    context={}
+    return render(request,'html/CarroDeCompras.html', context)
+
+def login(request):
+    context={}
+    return render(request,'html/login.html', context)    

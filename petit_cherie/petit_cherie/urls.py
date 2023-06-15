@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tienda.views import index
+from tienda.views import index,carrito,login
 	
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
+    path('carrito',carrito),
+    path('login',login),
 ]
