@@ -40,4 +40,16 @@ def pasteleria(request):
 
 def tortas(request):
     context={}
-    return render(request,'html/tortas.html', context)       
+    return render(request,'html/tortas.html', context)   
+
+def quienesSomos(request):
+    context={}
+    return render(request,'html/QuienesSomos.html', context) 
+
+def recuperarContrasena(request):
+    context={}
+    return render(request,'html/recuperarContrasena.html', context) 
+
+def recuperarCuenta(request):
+    context={}
+    return render(request,'html/recuperarCuenta.html', context)     
