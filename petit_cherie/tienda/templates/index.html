@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Description" content="Le Petit Cherie es una tienda de Pastelería Norteamericana ubicada en la Región de los Lagos en la ciudad de Puerto Montt"/>
+	<meta name="Autor" content="Eyleen Collado - Marco Hernández - Marco Bombalas"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Inicio - Panadería y Pastelería Le Petit Cherie</title>
+    <link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
+</head>
+<body class="body-background">
+	<!--Barra de Navegacion-->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+		<div class="container fluid">
+		  <img src='{% static "img/Le petit emma.png" %}' alt="logo petit cherie" width="120" height="120" class="d-inline-block align-text-top">
+		  <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+				  <li class="nav-item">
+					<a class="nav-link"  href="{% url 'index' %}"> Inicio </a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="{% static 'html/compra.html' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Comprar
+					  </a>
+					  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
+						<li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
+						<li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
+					  </ul>
+					</li>
+			  <li class="nav-item">
+					<a class="nav-link" href="{% static 'carrito' %}">Carro</a>
+				  </li>	  
+				  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar Sesión</a>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+	</header>
+	<!--CARUSEL-->
+	<section>
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src='{% static "img/carrusel1-1.jpg" %}' class="d-block w-100" alt="Panaderia">
+				<div class="carousel-caption d-none d-md-block">
+				  <h2>Panadería</h2>
+				  <h5>Tenemos una gran variedad de deliciosos Panes.</h5>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src='{% static "img/carrusel2-1.jpg" %}' class="d-block w-100" alt="Tortas">
+				<div class="carousel-caption d-none d-md-block">
+				  <h2>Tortas</h2>
+				  <h5>Los mejores diseños y sabores. Puedes pedirlos personalizados para tu día especial.</h5>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src='{% static "img/carrusel3-1.jpg" %}'class="d-block w-100" alt="Cupcakes">
+				<div class="carousel-caption d-none d-md-block">
+				  <h2>Cupcakes</h2>
+				  <h5>Hermosas decoraciones, ideales para tus fiestas. ¡Sin olvidar sus sabores!</h5>
+				</div>
+			</div>
+		</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Anterior</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Siguiente</span>
+			</button>
+	</div>
+	<br><br>
+	</section>
+	<footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline">
+		<div class="container">
+			<br>
+		<p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023  </p>
+		</div>
+	</footer>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	</body>
+	</html>

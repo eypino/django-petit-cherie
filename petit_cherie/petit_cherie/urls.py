@@ -16,9 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tienda.views import index
+from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta
+	
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', index,name='index'),
+    path('carrito',carrito,name='carrito'),
+    path('login',login,name='login'),
+    path('tienda',tienda,name='tienda'),
+    path('registro',registro,name='registro'),
+    path('tienda/panaderia',panaderia,name='panaderia'),
+    path('tienda/pasteleria',pasteleria,name='pasteleria'),
+    path('tienda/tortas',tortas,name='tortas'),
+    path('quienes_somos',quienesSomos,name='quienesSomos'),
+    path('recuperar_contrasena',recuperarContrasena,name='recuperarContrasena'),
+    path('recuperar_cuenta',recuperarCuenta,name='recuperarCuenta'),
 ]

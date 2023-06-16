@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,68 +7,69 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="../css/Styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<title>Cupcakes - Panadería y Pastelería Le Petit Cherie</title>
-	<link rel="icon" type="image/x-icon" href="../img/Le petit emma.png">
+	<link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
 
 </head>
 
 <body class="body-background2">
 	<header class="header-visible">
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
-		  <div class="container col-12">
-			<div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-			  <img src="../img/Le petit emma.png" alt="logo petit cherie" width="120" height="120"
-				class="d-inline-block align-text-top">
-			</div>
-			<div
-			  class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
-			  <a class="navbar-brand fw-bold" href="../index.html">Le Petit Cherie</a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon text-center"></span>
-			  </button>
-			</div>
-			<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
-				  <li class="nav-item">
-					<a class="nav-link" href="../index.html"> Inicio </a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="../html/QuienesSomos.html"> Quiénes Somos </a>
-				  </li>
-				  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="/html/compra.html" id="navbarDropdown" role="button"
-					  data-bs-toggle="dropdown" aria-expanded="false">
-					  Comprar
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <li><a class="dropdown-item" href="../html/panaderia.html">Panadería</a></li>
-					  <li><a class="dropdown-item" href="../html/pasteleria.html">Cupcakes</a></li>
-					  <li><a class="dropdown-item" href="../html/tortas.html">Tortas</a></li>
-					</ul>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="../html/CarroDeCompras.html">Carro</a>
-				  </li>
-				  <a href="../html/login.html" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
-					Sesión</a>
-				</ul>
-			  </div>
-			</div>
-		  </div>
-		</nav>
-	  </header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
+          <div class="container col-12">
+            <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
+              <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
+                class="d-inline-block align-text-top">
+            </div>
+            <div
+              class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
+              <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-center"></span>
+              </button>
+            </div>
+            <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Comprar
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
+                        <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
+                        <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
+                  </li>
+                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
+                    Sesión</a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
 	<section>
 		<div class="container-xl w-75 mt-5 shadow " style="background-color: white;"><center>
 			<div class="row">
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 35rem;">
-						<img src="../img/img1.jpg" class="card-img-top" alt="BlackBerry Cupcake">
+						<img src="{% static 'img/img1.jpg' %}" class="card-img-top" alt="BlackBerry Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">BlackBerry Cupcake</h5>
 							<p class="card-text">El delicioso pastel de chocolate, relleno de mermelada de mora y
@@ -82,7 +84,7 @@
 
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img2.jpg" class="card-img-top" alt="Galaxy Cupcake">
+						<img src="{% static 'img/img2.jpg' %}" class="card-img-top" alt="Galaxy Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Galaxy Cupcake</h5>
 							<p class="card-text">Delicioso pastel de chocolate, relleno con m&m's y decorado con crema
@@ -94,7 +96,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img3.jpg" class="card-img-top" alt="Double Chocolate Cupcake">
+						<img src="{% static 'img/img3.jpg' %}" class="card-img-top" alt="Double Chocolate Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Double Chocolate Cupcake</h5>
 							<p class="card-text">Delicioso pastel de chocolate, relleno con un centro de crema de
@@ -107,7 +109,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem;height: 35rem;">
-						<img src="../img/img4.jpg" class="card-img-top" alt="Nutella Cupcake">
+						<img src="{% static 'img/img4.jpg' %}" class="card-img-top" alt="Nutella Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Nutella Cupcake</h5>
 							<p class="card-text">Delicioso pastel de chocolate, relleno con avellanas y decorado con
@@ -121,7 +123,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img5.jpg" class="card-img-top" alt="Caramel Cupcake">
+						<img src="{% static 'img/img5.jpg' %}" class="card-img-top" alt="Caramel Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Caramel Cupcake</h5>
 							<p class="card-text">Delicioso pastel de chocolate, relleno con toffee y decorado con crema
@@ -133,7 +135,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img6.jpg" class="card-img-top" alt="Chocolate Banana Cupcake">
+						<img src="{% static 'img/img6.jpg' %}" class="card-img-top" alt="Chocolate Banana Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Chocolate Banana Cupcake</h5>
 							<p class="card-text">Delicioso pastel de chocolate, relleno con crema de chocolate y
@@ -145,7 +147,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img7.jpg" class="card-img-top" alt="Strawberry Cupcake">
+						<img src="{% static 'img/img7.jpg' %}" class="card-img-top" alt="Strawberry Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Strawberry Cupcake</h5>
 							<p class="card-text">Delicioso pastel de vainilla, relleno con trozos de frutilla y decorado
@@ -157,7 +159,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img8.jpg" class="card-img-top" alt="Pink Sugar Cupcake">
+						<img src="{% static 'img/img8.jpg' %}" class="card-img-top" alt="Pink Sugar Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Pink Sugar Cupcake</h5>
 							<p class="card-text">Un Cupcake elaborado en base a azúcar flor y con un relleno de
@@ -169,7 +171,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img9.jpg" class="card-img-top" alt="Rainbow cupcakes">
+						<img src="{% static 'img/img9.jpg' %}" class="card-img-top" alt="Rainbow cupcakes">
 						<div class="card-body">
 							<h5 class="card-title">Rainbow cupcakes</h5>
 							<p class="card-text">Un postre que combina diferentes tipos de cremas de colores junto a
@@ -181,7 +183,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img10.jpg" class="card-img-top" alt="Coffee cupcakes">
+						<img src="{% static 'img/img10.jpg' %}" class="card-img-top" alt="Coffee cupcakes">
 						<div class="card-body">
 							<h5 class="card-title">Coffee cupcakes</h5>
 							<p class="card-text">Un Cupcake elaborado con pasta de café y cubierto de crema y manjar
@@ -193,7 +195,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img11.jpg" class="card-img-top" alt="Matcha Cupcake">
+						<img src="{% static 'img/img11.jpg' %}"class="card-img-top" alt="Matcha Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Matcha Cupcake</h5>
 							<p class="card-text">Delicioso pastel de té verde, decorado con crema de mantequilla con
@@ -205,7 +207,7 @@
 				</div>
 				<div class="col mt-3">
 					<div class="card shadow" style="width: 18rem; height: 36rem;">
-						<img src="../img/img12.jpg" class="card-img-top" alt="Vanilla Cupcake">
+						<img src="{% static 'img/img12.jpg' %}" class="card-img-top" alt="Vanilla Cupcake">
 						<div class="card-body">
 							<h5 class="card-title">Vanilla Cupcake</h5>
 							<p class="card-text">Delicioso pastel de Vainilla, aromatizado con naranja y decorado con
