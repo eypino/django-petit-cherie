@@ -31,7 +31,7 @@
 					<a class="nav-link" href="html/QuienesSomos.html"> Quiénes Somos </a>
 				  </li>
 				  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="/html/compra.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" href="{% static 'html/compra.html' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Comprar
 					  </a>
 					  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,9 +41,9 @@
 					  </ul>
 					</li>
 			  <li class="nav-item">
-					<a class="nav-link" href="html/CarroDeCompras.html">Carro</a>
+					<a class="nav-link" href="{% static 'carrito' %}">Carro</a>
 				  </li>	  
-				  <a href="html/login.html" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar Sesión</a>
+				  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar Sesión</a>
 				</ul>
 			  </div>
 			</div>
