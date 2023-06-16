@@ -28,4 +28,8 @@ def login(request):
 
 def registro(request):
     context={}
-    return render(request,'html/paginaRegistro.html', context)        
+    return render(request,'html/paginaRegistro.html', context)    
+       
+def panaderia(request):
+    context={}
+    return render(request,'html/Panaderia.html', context)          
