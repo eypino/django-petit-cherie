@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +10,8 @@
         content="Le Petit Cherie es una tienda de Pastelería Norteamericana ubicada en la Región de los Lagos en la ciudad de Puerto Montt" />
     <meta name="Autor" content="Eyleen Collado - Marco Hernández - Marco Bombalas" />
     <title>Carro de Compras - Panadería y Pastelería Le Petit Cherie</title>
-    <link rel="icon" type="image/x-icon" href="../img/Le petit emma.png">
-    <link href="../css/Styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -20,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
           <div class="container col-12">
             <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-              <img src="../img/Le petit emma.png" alt="logo petit cherie" width="120" height="120"
+              <img src="{%static 'img/Le petit emma.png'%}" alt="logo petit cherie" width="120" height="120"
                 class="d-inline-block align-text-top">
             </div>
             <div
@@ -77,14 +78,14 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../img/banner1.jpg" class="d-block w-100" alt="Banner Panaderia">
+                    <img src="{% static 'img/banner1.jpg' %}" class="d-block w-100" alt="Banner Panaderia">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Panadería</h5>
                         <p>Compra nuestros ricos panes. Tenemos toda la variedad que quieres en tu casa.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/banner3.jpg" class="d-block w-100" alt="Banner Tortas">
+                    <img src="{% static 'img/banner3.jpg '%}" class="d-block w-100" alt="Banner Tortas">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Tortas</h5>
                         <p>Disfruta con nuestra variedad en Tortas. Puedes decorarlas y personalizarlas para tu Fiesta.
@@ -92,7 +93,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/banner4.jpg" class="d-block w-100" alt="Banner Cupcakes">
+                    <img src="{% static 'img/banner4.jpg' %}" class="d-block w-100" alt="Banner Cupcakes">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Cupcakes</h5>
                         <p>Deléitate con la extensa variedad de sabores y colores de nuestros hermosos Cupcakes.</p>
@@ -116,7 +117,7 @@
             <div class="row">
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem;">
-                        <img src="../img/Panadería.jpg" class="card-img-top" alt="Menu Panadería">
+                        <img src="{% static 'img/Panadería.jpg' %}" class="card-img-top" alt="Menu Panadería">
                         <div class="card-body">
                             <h5 class="card-title">Panadería</h5>
                             <p class="card-text"> Descubre nuestra sección de la más fina panadería.</p>
@@ -127,7 +128,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem;">
-                        <img src="../img/Torta.jpg" class="card-img-top" alt="Menu Tortas">
+                        <img src="{% static 'img/Torta.jpg' %}" class="card-img-top" alt="Menu Tortas">
                         <div class="card-body">
                             <h5 class="card-title">Tortas</h5>
                             <p class="card-text"> Descubre los sabores de nuestras deliciosas Tortas. </p>
@@ -138,7 +139,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem;">
-                        <img src="../img/Cupcake.jpg" class="card-img-top" alt="Menu Cupcakes">
+                        <img src="{% static 'img/Cupcake.jpg' %}" class="card-img-top" alt="Menu Cupcakes">
                         <div class="card-body">
                             <h5 class="card-title">Cupcakes</h5>
                             <p class="card-text">Elige uno, o varios. Diferentes colores y sabores, descúbrelo aquí.</p>

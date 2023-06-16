@@ -18,6 +18,10 @@ def carrito(request):
     context={}
     return render(request,'html/CarroDeCompras.html', context)
 
+def tienda(request):
+    context={}
+    return render(request,'html/Compra.html', context)    
+
 def login(request):
     context={}
     return render(request,'html/login.html', context)    
