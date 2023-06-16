@@ -10,7 +10,7 @@ class Genero(models.Model):
     
 class TipoUsuario(models.Model):
     id_tipo_usuario = models.AutoField(db_column='idTipoUsuario', primary_key=True) 
-    tipo_usuario    = models.CharField(max_length=20, blank=False, null=False)
+    tipoUsuario    = models.CharField(max_length=20, blank=False, null=False)
 
     def __str__(self):
         return str(self.tipo_usuario)
@@ -18,7 +18,7 @@ class TipoUsuario(models.Model):
 
 
 class Usuario(models.Model):
-    nro_usuario         = models.AutoField(db_column='idUsuario', primary_key=True) 
+    nro_usuario         = models.AutoField(db_column='Usuario', primary_key=True) 
     correo              = models.CharField(max_length=50, blank=False, null=False)
     p_nombre            = models.CharField(max_length=30, blank=False, null=False)
     s_nombre            = models.CharField(max_length=30)
@@ -29,7 +29,7 @@ class Usuario(models.Model):
     telefono            = models.IntegerField(blank=False, null=False)
     contraseña          = models.CharField(max_length=30, blank=False, null=False)
     id_genero           = models.ForeignKey('genero', on_delete=models.CASCADE, db_column='idGenero')
-    id_tipo_usuario     = models.ForeignKey('tipo_usuario', on_delete=models.CASCADE, db_column='idTipoUsuario')
+    id_tipo_usuario     = models.ForeignKey('tipoUsuario', on_delete=models.CASCADE, db_column='idTipoUsuario')
 
     def __str__(self):
         return str(self.p_nombre_cli+" "+self.a_paterno_cli)
@@ -49,17 +49,20 @@ class Producto(models.Model):
 class Compra(models.Model):
     nro_compra       = models.AutoField(primary_key=True)
     total            = models.IntegerField(blank=False, null=False) 
-    nro_usuario      = models.ForeignKey('id_usuario', on_delete=models.CASCADE, db_column='id_usuario')
+    nro_usuario      = models.ForeignKey('Usuario', on_delete=models.CASCADE, db_column='id_usuario')
 
     def __str__(self):
         return str(self.nro_compra)+" "+str(self.total)
 
 class DetalleCompra(models.Model):
-    nro_item           = models.AutoField(primary_key=True)
-    nro_compra         = models.ForeignKey('compra', on_delete=models.CASCADE, db_column='nro_compra', primary_key=True)
-    id_producto        = models.ForeignKey('producto', on_delete=models.CASCADE, db_column='id_producto')
-    cantidad           = models.IntegerField(blank=False, null=False)
-    valor_item         = models.IntegerField(blank=False, null=False)
+    nro_item = models.AutoField(primary_key=True, default=1)
+    nro_compra = models.ForeignKey('Compra', on_delete=models.CASCADE, db_column='nro_compra')
+    id_producto = models.ForeignKey('Producto', on_delete=models.CASCADE, db_column='id_producto')
+    cantidad = models.IntegerField(blank=False, null=False)
+    valor_item = models.IntegerField(blank=False, null=False)
+
+    class Meta:
+        unique_together = ('nro_compra', 'nro_item',)
 
     def __str__(self):
         return str(self.id_producto)+ " " +str(self.cantidad)+ " $"+str(self.valor_item)
