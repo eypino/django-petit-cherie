@@ -25,3 +25,7 @@ def tienda(request):
 def login(request):
     context={}
     return render(request,'html/login.html', context)    
+
+def registro(request):
+    context={}
+    return render(request,'html/paginaRegistro.html', context)        
