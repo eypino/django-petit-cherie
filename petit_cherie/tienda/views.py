@@ -32,4 +32,12 @@ def registro(request):
        
 def panaderia(request):
     context={}
-    return render(request,'html/Panaderia.html', context)          
+    return render(request,'html/Panaderia.html', context)         
+
+def pasteleria(request):
+    context={}
+    return render(request,'html/pasteleria.html', context)       
+
+def tortas(request):
+    context={}
+    return render(request,'html/tortas.html', context)       

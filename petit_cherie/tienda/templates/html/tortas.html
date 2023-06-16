@@ -1,3 +1,4 @@
+{% load static %}   
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/Styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Tortas - Panadería y Pastelería Le Petit Cherie</title>
-    <link rel="icon" type="image/x-icon" href="../img/Le petit emma.png">
+    <link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
 
 </head>
 
@@ -18,7 +19,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
           <div class="container col-12">
             <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-              <img src="../img/Le petit emma.png" alt="logo petit cherie" width="120" height="120"
+              <img src="{% static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
                 class="d-inline-block align-text-top">
             </div>
             <div
@@ -66,7 +67,7 @@
             <div class="row">
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta2.jpg" class="card-img-top" alt="Torta Frutos Rojos">
+                        <img src="{% static 'img/torta2.jpg' %}" class="card-img-top" alt="Torta Frutos Rojos">
                         <div class="card-body">
                             <h5 class="card-title">Torta Frutos Rojos</h5>
                             <p class="card-text">La torta de frutos rojos es un delicioso postre hecho con una suave y
@@ -81,7 +82,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta3.jpg" class="card-img-top" alt="Torta de Frutilla">
+                        <img src="{% static 'img/torta3.jpg' %}" class="card-img-top" alt="Torta de Frutilla">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Frutilla</h5>
                             <p class="card-text">La torta de frutilla es un clásico postre hecho con una suave y
@@ -97,7 +98,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta4.jpg" class="card-img-top" alt="Torta de Merengue Frambuesa">
+                        <img src="{% static 'img/torta4.jpg' %}" class="card-img-top" alt="Torta de Merengue Frambuesa">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Merengue Frambuesa</h5>
                             <p class="card-text">La torta de merengue de frambuesa es un postre elegante y delicioso que
@@ -113,7 +114,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta5.jpg" class="card-img-top" alt="Torta de Lúcuma">
+                        <img src="{% static 'img/torta5.jpg' %}" class="card-img-top" alt="Torta de Lúcuma">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Lúcuma</h5>
                             <p class="card-text">La torta de lúcuma chilena es un postre muy popular en Chile que se
@@ -129,7 +130,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta6.jpg" class="card-img-top" alt="Torta de Nuez">
+                        <img src="{% static 'img/torta6.jpg' %}" class="card-img-top" alt="Torta de Nuez">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Nuez</h5>
                             <p class="card-text">La torta de nuez es un clásico postre hecho con una masa de bizcocho
@@ -145,7 +146,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta7.png" class="card-img-top" alt="Torta Tres Leches">
+                        <img src="{% static 'img/torta7.png' %}" class="card-img-top" alt="Torta Tres Leches">
                         <div class="card-body">
                             <h5 class="card-title">Torta Tres Leches</h5>
                             <p class="card-text">La torta tres leches es un postre tradicional latinoamericano, hecho
@@ -161,7 +162,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta9.jpg" class="card-img-top" alt="Torta Selva Negra">
+                        <img src="{% static 'img/torta9.jpg' %}" class="card-img-top" alt="Torta Selva Negra">
                         <div class="card-body">
                             <h5 class="card-title">Torta Selva Negra</h5>
                             <p class="card-text">La torta de selva negra es un postre originario de Alemania, hecho con
@@ -178,7 +179,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta10.jpg" class="card-img-top" alt="Torta de Trufa">
+                        <img src="{% static 'img/torta10.jpg' %}" class="card-img-top" alt="Torta de Trufa">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Trufa</h5>
                             <p class="card-text">La torta de trufa es un postre delicioso y elegante, hecho con una masa
@@ -194,7 +195,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta11.jpg" class="card-img-top" alt="Torta de Piña">
+                        <img src="{% static 'img/torta11.jpg' %}" class="card-img-top" alt="Torta de Piña">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Piña</h5>
                             <p class="card-text">La torta de piña es un postre tropical y refrescante, hecho con una
@@ -210,7 +211,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta12.jpg" class="card-img-top" alt="Torta de Durazno">
+                        <img src="{% static 'img/torta12.jpg' %}" class="card-img-top" alt="Torta de Durazno">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Durazno</h5>
                             <p class="card-text">La torta de durazno es un postre dulce y aromático, hecho con una masa
@@ -226,7 +227,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/torta14.jpg" class="card-img-top" alt="Torta de Maracuyá">
+                        <img src="{% static 'img/torta14.jpg' %}" class="card-img-top" alt="Torta de Maracuyá">
                         <div class="card-body">
                             <h5 class="card-title">Torta de Maracuyá</h5>
                             <p class="card-text">La torta de maracuyá es un postre tropical y refrescante, hecho con una
@@ -242,7 +243,7 @@
                 </div>
                 <div class="col mt-3">
                     <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="../img/tortadecorada.jpg" class="card-img-top" alt="Torta Personalizada">
+                        <img src="{% static 'img/tortadecorada.jpg' %}" class="card-img-top" alt="Torta Personalizada">
                         <div class="card-body">
                             <h5 class="card-title">Personaliza tu Torta para Celebraciones</h5>
                             <p class="card-text">Personalizar una torta es una forma única y especial de crear un postre

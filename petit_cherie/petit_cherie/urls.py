@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tienda.views import index,carrito,login,tienda,registro,panaderia
+from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas
 	
 
 urlpatterns = [
@@ -27,4 +27,6 @@ urlpatterns = [
     path('tienda',tienda),
     path('registro',registro),
     path('tienda/panaderia',panaderia),
+    path('tienda/pasteleria',pasteleria),
+    path('tienda/tortas',tortas),
 ]
