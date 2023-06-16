@@ -21,8 +21,8 @@ from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleri
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('carrito',carrito),
+    path('', index,name='index'),
+    path('carrito',carrito,name='carrito'),
     path('login',login,name='login'),
     path('tienda',tienda,name='tienda'),
     path('registro',registro,name='registro'),

@@ -17,16 +17,17 @@
 </head>
 
 <body class="body-background2">
+
     <header class="header-visible">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
           <div class="container col-12">
             <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-              <img src="{%static 'img/Le petit emma.png'%}" alt="logo petit cherie" width="120" height="120"
+              <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
                 class="d-inline-block align-text-top">
             </div>
             <div
               class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
-              <a class="navbar-brand fw-bold" href="../index.html">Le Petit Cherie</a>
+              <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -37,26 +38,26 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
                   <li class="nav-item">
-                    <a class="nav-link" href="../index.html"> Inicio </a>
+                    <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../html/QuienesSomos.html"> Quiénes Somos </a>
+                    <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/html/compra.html" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
                       data-bs-toggle="dropdown" aria-expanded="false">
                       Comprar
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="../html/panaderia.html">Panadería</a></li>
-                      <li><a class="dropdown-item" href="../html/pasteleria.html">Cupcakes</a></li>
-                      <li><a class="dropdown-item" href="../html/tortas.html">Tortas</a></li>
+                        <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
+                        <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
+                        <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../html/CarroDeCompras.html">Carro</a>
+                    <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
                   </li>
-                  <a href="../html/login.html" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
+                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
                     Sesión</a>
                 </ul>
               </div>
