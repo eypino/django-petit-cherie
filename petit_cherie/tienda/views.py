@@ -56,4 +56,12 @@ def recuperarCuenta(request):
 
 def incercion(request):
     context={}
-    return render(request,'html/incercion.html', context)     
+    return render(request,'html/incercion.html', context) 
+
+def editar(request):
+    context={}
+    return render(request,'html/editar.html', context)
+
+def eliminar(request):
+    context={}
+    return render(request,'html/eliminar.html', context)    
