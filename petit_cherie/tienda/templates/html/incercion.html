@@ -66,6 +66,53 @@
         </nav>
       </header>
 
+<section style="margin-bottom: 60px;">
+    <form action="" onsubmit="" id="formaReg" class="mx-auto">
+        <div class="container w-100 mt-5 bg-white rounded shadow " id="divFormaReg">
+            <div class="row align-items-center">
+                <div class="text-center mt-3">
+                    <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
+                </div>
+                <h1 class="text-center mx-auto">Insercion de productos</h1>
+                <!--NOMBRES PRODUCTO-->
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
+                    <label class="w-75">Nombre del Producto</label>
+                    <input class="w-75 form-control" type="text" name="Nombres_producto" id="productoReg"
+                    placeholder="Ingrese su primer y segundo nombre">
+                </div>
+                <!--DESCRIPCION-->
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
+                    <label class="w-75">Decripcion del Producto</label>
+                    <input class="w-75 form-control" type="text" name="Decripcion_producto" id="descripcionReg"
+                    placeholder="Ingrese su primer y segundo apellido">
+                </div>
+                <!--PRECIO-->
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
+                    <label class="w-75">Precio del Producto</label>
+                    <input class="w-75 form-control text-start" type="text" name="Precio" id="precioReg"
+                    placeholder="Ingrese su rut sin puntos">
+                </div>
+                <!--SECCION-->
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
+                    <label class="w-75">Seccion</label>
+                    <select class="form-select w-75 text-start" name="Seccion" id="secciono">
+                        <option selected>Indique la seccion del producto </option>
+                        <option>Panaderia</option>
+                        <option>Pasteleria</option>
+                        <option>Tortas</option>
+                    </select>
+                    </div>
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
+                        <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="button">Aceptar</button>
+                    </div>
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
+                        <button class="btn btn-danger w-75 mb-5" id="botonBorrarReg" type="reset">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</section>
+
 <br><br> <br>
 <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline;">
     <div class="container-fluid">
