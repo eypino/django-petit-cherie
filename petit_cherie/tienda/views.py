@@ -52,4 +52,8 @@ def recuperarContrasena(request):
 
 def recuperarCuenta(request):
     context={}
-    return render(request,'html/recuperarCuenta.html', context)     
+    return render(request,'html/recuperarCuenta.html', context)
+
+def incercion(request):
+    context={}
+    return render(request,'html/incercion.html', context)     
