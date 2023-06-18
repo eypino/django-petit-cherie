@@ -8,22 +8,21 @@ class Genero(models.Model):
     def __str__(self):
         return str(self.genero)
     
+
 class TipoUsuario(models.Model):
     id_tipo_usuario = models.AutoField(db_column='idTipoUsuario', primary_key=True) 
     tipoUsuario    = models.CharField(max_length=20, blank=False, null=False)
 
     def __str__(self):
-        return str(self.tipo_usuario)
+        return str(self.tipoUsuario)
     
 
 
 class Usuario(models.Model):
     nro_usuario         = models.AutoField(db_column='Usuario', primary_key=True) 
     correo              = models.CharField(max_length=50, blank=False, null=False)
-    p_nombre            = models.CharField(max_length=30, blank=False, null=False)
-    s_nombre            = models.CharField(max_length=30)
-    a_paterno           = models.CharField(max_length=30, blank=False, null=False)
-    a_materno           = models.CharField(max_length=30, blank=False, null=False)
+    nombres             = models.CharField(max_length=60, blank=False, null=False)
+    apellidos           = models.CharField(max_length=30, blank=False, null=False)
     rut                 = models.CharField(max_length=10, blank=False, null=False)
     fecha_nac           = models.DateField(blank=False, null=False)
     telefono            = models.IntegerField(blank=False, null=False)
@@ -32,15 +31,23 @@ class Usuario(models.Model):
     id_tipo_usuario     = models.ForeignKey('tipoUsuario', on_delete=models.CASCADE, db_column='idTipoUsuario')
 
     def __str__(self):
-        return str(self.p_nombre_cli+" "+self.a_paterno_cli)
-    
+        return str(self.nombres+" "+self.apellidos)
+
+
+class TipoProducto(models.Model):
+    id_tipo_producto  = models.AutoField(db_column='idTipoProducto', primary_key=True) 
+    tipoProducto      = models.CharField(max_length=20, blank=False, null=False)
+
+    def __str__(self):
+        return str(self.tipoProducto)
 
 class Producto(models.Model):
     id_producto      = models.AutoField(primary_key=True)
-    nombre_producto  = models.CharField(max_length=50)
-    descripcion_prod = models.CharField(max_length=20)
+    nombre_producto  = models.CharField(max_length=20)
+    descripcion_prod = models.CharField(max_length=1000)
     valor_prod       = models.IntegerField(blank=False, null=False) 
     imagen_prod      = models.ImageField(blank=False, null=False)
+    id_tipo_producto = models.ForeignKey('TipoProducto', on_delete=models.CASCADE, db_column='idTipoProducto')
 
     def __str__(self):
         return str(self.nombre_producto)   
@@ -65,4 +72,4 @@ class DetalleCompra(models.Model):
         unique_together = ('nro_compra', 'nro_item',)
 
     def __str__(self):
-        return str(self.id_producto)+ " " +str(self.cantidad)+ " $"+str(self.valor_item)
+        return str(self.nro_item)+ " " +str(self.id_producto)+ " " +str(self.cantidad)+ " $"+str(self.valor_item)
