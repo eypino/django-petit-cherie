@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import *
 
 
 # Create your views here.
@@ -53,3 +54,18 @@ def recuperarContrasena(request):
 def recuperarCuenta(request):
     context={}
     return render(request,'html/recuperarCuenta.html', context)     
+
+def panaderia(request):
+    productos=Producto.objects.all()
+    context={'productos':productos}
+    return render(request, 'html/Panaderia.html', context)
+
+def pasteleria(request):
+    productos=Producto.objects.all()
+    context={'productos':productos}
+    return render(request, 'html/pasteleria.html', context)
+
+def tortas(request):
+    productos=Producto.objects.all()
+    context={'productos':productos}
+    return render(request, 'html/tortas.html', context)

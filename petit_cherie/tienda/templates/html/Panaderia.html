@@ -12,192 +12,94 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Panadería  - Pastelería y Panadería Le Petit Cherie</title>
-  <link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
+  <title>Panadería - Pastelería y Panadería Le Petit Cherie</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/Le petit emma.png' %}">
 
 </head>
 
 <body class="body-background2">
-    <header class="header-visible">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
-          <div class="container col-12">
-            <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-              <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
-                class="d-inline-block align-text-top">
-            </div>
-            <div
-              class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
-              <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon text-center"></span>
-              </button>
-            </div>
-            <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Comprar
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
-                        <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
-                        <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
-                  </li>
-                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
-                    Sesión</a>
+  <header class="header-visible">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
+      <div class="container col-12">
+        <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
+          <img src="{% static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
+            class="d-inline-block align-text-top">
+        </div>
+        <div
+          class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
+          <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-center"></span>
+          </button>
+        </div>
+        <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'quienesSomos' %}">Quiénes Somos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Comprar
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
+                  <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
+                  <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
                 </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button"
+                  aria-disabled="true">Iniciar Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container-xl w-75 mt-5 shadow" style="background-color: white;">
+      <center>
+        <div class="row">
+          {% for n in productos %}
+            {% if n.id_tipo_producto.tipoProducto == "Panadería" %}
+          <div class="col mt-3">
+            <div class="card shadow" style="width: 18rem; height: 35rem;">
+              <img src="{% static n.imagen_prod %}" class="card-img-top" alt="{{ n.nombre_producto }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ n.nombre_producto }}</h5>
+                <p class="card-text">{{ n.descripcion_prod }}<br>
+                  ${{ n.valor_prod }} por kilo</p>
+                <button type="button" class="btn btn-outline-danger" >Añadir</button>
               </div>
             </div>
           </div>
-        </nav>
-      </header>
-
-  <section>
-    <div class="container-xl w-75 mt-5 shadow" style="background-color: white;"><center>
-      <div class="row">
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan01.jpg' %}" class="card-img-top" alt="Marraqueta">
-            <div class="card-body">
-              <h5 class="card-title">Marraqueta</h5>
-              <p class="card-text">Este pan está elaborado a base de harina blanca de trigo, agua, levadura y sal y
-                requiere más tiempo de fermentación que otros panes, no contiene grasas y se caracteriza por su forma
-                peculiar. <br>
-                $990 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan02.jpg' %}" class="card-img-top" alt="Hallulla">
-            <div class="card-body">
-              <h5 class="card-title">Hallulla</h5>
-              <p class="card-text">Elaborado a base de harina refinada. Su forma es redonda y plana, y tiene una
-                consistencia firme y semiesponjosa. <br>
-                $990 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan03.jpg' %}" class="card-img-top" alt="Baguette">
-            <div class="card-body">
-              <h5 class="card-title">Baguette</h5>
-              <p class="card-text">Se caracteriza por una forma alargada. Es uno de los formatos de pan más conocidos,
-                producidos y consumidos a nivel internacional. Contiene harina de trigo, agua, levadura y sal. <br>
-                $1300 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan04.jpg' %}" class="card-img-top" alt="Coliza Peruana">
-            <div class="card-body">
-              <h5 class="card-title">Coliza Peruana</h5>
-              <p class="card-text">El más suave de nuestros panes, perfecto para que todos puedan disfrutarlo. Esponjoso
-                y de cubierta dorada, siempre destacando por ser un pan blandito. <br>
-                $1000 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan05.jpg' %}" class="card-img-top" alt="Pan Amasado">
-            <div class="card-body">
-              <h5 class="card-title">Pan Amasado</h5>
-              <p class="card-text"> El pan amasado es delicioso y clásico de las vacaciones en la playa, en el sur o
-                comprado a la pasada donde ondean los paños blancos. <br>
-                $1100 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan06.jpg' %}" class="card-img-top" alt="Pan Toscano">
-            class="card-img-top" alt="Pan Toscano">
-            <div class="card-body">
-              <h5 class="card-title">Pan Toscano</h5>
-              <p class="card-text">Lo que más lo distingue es el hecho de que no tiene sal y tiene un sabor a miga
-                ligeramente ácido. <br>
-                $1200 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan07.jpg' %}" class="card-img-top" alt="Pan Toscano">
-            class="card-img-top" alt="Pan Integral">
-            <div class="card-body">
-              <h5 class="card-title">Pan Integral</h5>
-              <p class="card-text">Pan que ha sido elaborado con harina no refinada, es decir, que se ha dejado el grano
-                integral, lo que incluye el salvado por lo que posee una gran cantidad de fibra dietética. <br>
-                $3000 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan08.jpg' %}" class="card-img-top" alt="Pan Toscano">
-            class="card-img-top" alt="Pan Pita">
-            <div class="card-body">
-              <h5 class="card-title">Pan Pita</h5>
-              <p class="card-text">El pan pita es un tipo de pan plano blando, levemente fermentado, de harina de trigo.
-                <br>
-                $1500 por kilo
-              </p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-          </div>
-        </div>
-        <div class="col mt-3">
-          <div class="card shadow" style="width: 18rem;height: 35rem;">
-            <img src="{% static 'img/pan09.jpg' %}" class="card-img-top" alt="Pan Toscano">
-            class="card-img-top" alt="Pan de Molde">
-            <div class="card-body">
-              <h5 class="card-title">Pan de Molde</h5>
-              <p class="card-text">El pan de molde es aquel pan cuya masa se enriquece con mantequilla o leche y se
-                hornea dentro de un molde o lata. <br>
-                $2000 por kilo</p>
-              <button type="button" class="btn btn-outline-danger">Añadir</button>
-            </div>
-
-          </div><br>
-        </div>
-
-      </div>
-
+          {% endif %}
+          {% endfor %}
+        </div><br>
+      </center>
     </div>
-  </center>
-  </div>
   </section>
-<br><br> <br>
-  <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline;">
+
+  <br><br><br>
+  <footer class="fixed-bottom" style="display: grid; width: 100%; align-self: baseline;">
     <div class="container-fluid">
       <br>
-      <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 </p>
+      <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023</p>
     </div>
   </footer>
 
 </body>
+
 </html>
