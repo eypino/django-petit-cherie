@@ -26,6 +26,7 @@ class Usuario(models.Model):
     rut                 = models.CharField(max_length=10, blank=False, null=False)
     fecha_nac           = models.DateField(blank=False, null=False)
     telefono            = models.IntegerField(blank=False, null=False)
+    direccion           = models.CharField(max_length=100, blank=False, null=False)
     contraseña          = models.CharField(max_length=30, blank=False, null=False)
     id_genero           = models.ForeignKey('genero', on_delete=models.CASCADE, db_column='idGenero')
     id_tipo_usuario     = models.ForeignKey('tipoUsuario', on_delete=models.CASCADE, db_column='idTipoUsuario')
