@@ -105,16 +105,16 @@
             <input class="form-control w-75" type="file" id="formFile">
           </div>          
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="button">Incertar</button>
+            <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="button">Insertar</button>
           </div>
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
             <button class="btn btn-danger w-75 mb-5" id="botonBorrarReg" type="reset">Limpiar</button>
           </div>
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <button class="btn btn-dark w-75 mb-5" id="botonCompletarReg" type="button">Borrar</button>
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
+            <a class="btn btn-dark w-75" href="{% url 'eliminar' %}" id="botonCompletarReg" type="button">Eliminar</a>
           </div>
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <button class="btn btn-dark w-75 mb-5" id="botonBorrarReg" type="reset">Editar</button>
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
+            <a class="btn btn-dark w-75" href="{% url 'editar' %}" id="botonCompletarReg" type="button">Editar</a>
           </div>
         </div>
       </div>
@@ -127,6 +127,11 @@
       <br>
       <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
         <a href="/admin">Ir a la página de administración</a>
+				{% if user.is_authenticated and user.is_staff %}
+    		<a href="{% url 'insercion' %}" class="btn btn-primary">Inserción</a>
+				<a href= "{% url 'editar' %}" class="btn btn-dark">Editar</a>
+				<a href="{% url 'eliminar' %}" class="btn btn-danger">Eliminar</a>
+				{% endif %}
       </p>
     </div>
   </footer>

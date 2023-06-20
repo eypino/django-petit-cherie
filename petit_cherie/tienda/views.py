@@ -55,9 +55,9 @@ def recuperarCuenta(request):
     context={}
     return render(request,'html/recuperarCuenta.html', context)
 
-def incercion(request):
+def insercion(request):
     context={}
-    return render(request,'html/incercion.html', context) 
+    return render(request,'html/insercion.html', context) 
 
 def editar(request):
     context={}

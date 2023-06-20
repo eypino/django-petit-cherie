@@ -111,6 +111,11 @@
         <br>
         <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
           <a href="/admin">Ir a la página de administración</a>
+          {% if user.is_authenticated and user.is_staff %}
+          <a href="{% url 'insercion' %}" class="btn btn-primary">Inserción</a>
+          <a href= "{% url 'editar' %}" class="btn btn-dark">Editar</a>
+          <a href="{% url 'eliminar' %}" class="btn btn-danger">Eliminar</a>
+          {% endif %}
         </p>
       </div>
     </footer>
