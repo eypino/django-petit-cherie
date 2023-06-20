@@ -53,6 +53,7 @@ def recuperarContrasena(request):
 
 def recuperarCuenta(request):
     context={}
+<<<<<<< HEAD
     return render(request,'html/recuperarCuenta.html', context)     
 
 def panaderia(request):
@@ -69,3 +70,18 @@ def tortas(request):
     productos=Producto.objects.all()
     context={'productos':productos}
     return render(request, 'html/tortas.html', context)
+=======
+    return render(request,'html/recuperarCuenta.html', context)
+
+def incercion(request):
+    context={}
+    return render(request,'html/incercion.html', context) 
+
+def editar(request):
+    context={}
+    return render(request,'html/editar.html', context)
+
+def eliminar(request):
+    context={}
+    return render(request,'html/eliminar.html', context)    
+>>>>>>> master
