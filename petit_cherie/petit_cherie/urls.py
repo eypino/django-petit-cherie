@@ -16,6 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta
+from django.conf import settings
+from django.conf.urls.static import static
+
 from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta,incercion,editar,eliminar
 	
 
@@ -32,7 +36,9 @@ urlpatterns = [
     path('quienes_somos',quienesSomos,name='quienesSomos'),
     path('recuperar_contrasena',recuperarContrasena,name='recuperarContrasena'),
     path('recuperar_cuenta',recuperarCuenta,name='recuperarCuenta'),
-    path('incercion',incercion,name='incercion'),
-    path('editar',editar,name='editar'),
-    path('eliminar',eliminar,name='eliminar'),
+    
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

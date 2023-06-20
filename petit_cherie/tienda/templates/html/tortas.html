@@ -1,4 +1,4 @@
-{% load static %}   
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,253 +17,82 @@
 <body class="body-background2">
     <header class="header-visible">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
-          <div class="container col-12">
-            <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-              <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
-                class="d-inline-block align-text-top">
+            <div class="container col-12">
+                <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
+                    <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
+                        class="d-inline-block align-text-top">
+                </div>
+                <div
+                    class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
+                    <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon text-center"></span>
+                    </button>
+                </div>
+                <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Comprar
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
+                            </li>
+                            <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button"
+                                aria-disabled="true">Iniciar
+                                Sesión</a>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div
-              class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
-              <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon text-center"></span>
-              </button>
-            </div>
-            <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Comprar
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
-                        <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
-                        <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
-                  </li>
-                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
-                    Sesión</a>
-                </ul>
-              </div>
-            </div>
-          </div>
         </nav>
-      </header>
+    </header>
     <section>
-        <div class="container-xl w-75 mt-5 shadow" style="background-color: white;"><center>
-            <div class="row">
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta2.jpg' %}" class="card-img-top" alt="Torta Frutos Rojos">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta Frutos Rojos</h5>
-                            <p class="card-text">La torta de frutos rojos es un delicioso postre hecho con una suave y
-                                esponjosa masa de bizcocho, relleno de una cremosa mezcla de queso crema y frutos rojos
-                                frescos, como fresas, frambuesas y moras. Esta deliciosa combinación de sabores y
-                                texturas hace que la torta de frutos rojos sea una opción perfecta para cualquier
-                                ocasión especial o simplemente para disfrutar en cualquier momento del día.<br>
-                                $20000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
+        <div class="container-xl w-75 mt-5 shadow" style="background-color: white;">
+            <center>
+                <div class="row">
+                    {% for n in productos %}
+                    {% if n.id_tipo_producto.tipoProducto == "Pastelería" %}
+                    <div class="col mt-3">
+                        <div class="card shadow" style="width: 18rem; height: 51rem;">
+                            <img src="{% static n.imagen_prod %}" class="card-img-top" alt="{{ n.nombre_producto }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ n.nombre_producto }}</h5>
+                                <p class="card-text">{{ n.descripcion_prod }}<br>
+                                    ${{ n.valor_prod }} por unidad</p>
+                                <button type="button" class="btn btn-outline-danger">Añadir</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta3.jpg' %}" class="card-img-top" alt="Torta de Frutilla">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Frutilla</h5>
-                            <p class="card-text">La torta de frutilla es un clásico postre hecho con una suave y
-                                esponjosa masa de bizcocho, rellena de capas de crema batida y fresas frescas en
-                                rodajas. Esta deliciosa combinación de sabores y texturas hace que la torta de frutilla
-                                sea un postre perfecto para cualquier ocasión especial o simplemente para disfrutar en
-                                cualquier momento del día. Su aroma y sabor a fresas frescas la convierten en una opción
-                                irresistible para los amantes de los postres frutales. <br>
-                                $18000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta4.jpg' %}" class="card-img-top" alt="Torta de Merengue Frambuesa">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Merengue Frambuesa</h5>
-                            <p class="card-text">La torta de merengue de frambuesa es un postre elegante y delicioso que
-                                combina una suave y esponjosa masa de bizcocho con capas de crema de frambuesa y
-                                merengue suave y dulce. La acidez de las frambuesas y la dulzura del merengue se
-                                combinan perfectamente en cada bocado, creando una experiencia de sabor única y
-                                placentera. Esta torta es una excelente opción para cualquier ocasión especial o para
-                                aquellos que buscan un postre refinado y delicioso.<br>
-                                $22000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta5.jpg' %}" class="card-img-top" alt="Torta de Lúcuma">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Lúcuma</h5>
-                            <p class="card-text">La torta de lúcuma chilena es un postre muy popular en Chile que se
-                                elabora con la pulpa de la fruta lúcuma, que le da un sabor dulce y exótico. Esta
-                                deliciosa torta tiene una textura suave y esponjosa, y en ocasiones se complementa con
-                                un glaseado de lúcuma para resaltar aún más su sabor característico. Es una opción
-                                perfecta para los amantes de los postres, y es especialmente popular durante las
-                                celebraciones de las fiestas patrias en septiembre en Chile.<br>
-                                $22000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta6.jpg' %}" class="card-img-top" alt="Torta de Nuez">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Nuez</h5>
-                            <p class="card-text">La torta de nuez es un clásico postre hecho con una masa de bizcocho
-                                suave y esponjosa, mezclada con nueces picadas y espolvoreada con más nueces en la parte
-                                superior para darle un crujido agradable. El sabor tostado de las nueces combina
-                                perfectamente con la dulzura del bizcocho, creando una textura y un sabor únicos en cada
-                                bocado. Es un postre ideal para cualquier ocasión, y es especialmente popular durante
-                                las fiestas de otoño e invierno.<br>
-                                $24000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta7.png' %}" class="card-img-top" alt="Torta Tres Leches">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta Tres Leches</h5>
-                            <p class="card-text">La torta tres leches es un postre tradicional latinoamericano, hecho
-                                con una masa de bizcocho suave y esponjosa que se baña con una mezcla de tres tipos de
-                                leche: leche evaporada, leche condensada y crema de leche. Esta combinación crea una
-                                textura húmeda y cremosa que se derrite en la boca, mientras que el bizcocho absorbe el
-                                sabor dulce y cremoso de las leches. Se suele decorar con crema batida y frutas frescas,
-                                y es una opción deliciosa y popular para cualquier celebración o evento especial. <br>
-                                $22000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta9.jpg' %}" class="card-img-top" alt="Torta Selva Negra">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta Selva Negra</h5>
-                            <p class="card-text">La torta de selva negra es un postre originario de Alemania, hecho con
-                                una masa de bizcocho de chocolate esponjoso, rellena con una capa de crema batida y
-                                cerezas en almíbar. La torta se cubre con más crema batida y se espolvorea con virutas
-                                de chocolate negro. El resultado es una combinación irresistible de sabores dulces y
-                                ácidos, y una textura suave y cremosa que se deshace en la boca. Es una opción popular
-                                para celebraciones y eventos especiales, y se ha convertido en un clásico en la
-                                gastronomía internacional. <br>
-                                $22000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta10.jpg' %}" class="card-img-top" alt="Torta de Trufa">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Trufa</h5>
-                            <p class="card-text">La torta de trufa es un postre delicioso y elegante, hecho con una masa
-                                de bizcocho de chocolate suave y esponjosa, y rellena con una cremosa y rica trufa de
-                                chocolate. La torta se decora con más trufa, y se cubre con una capa de glaseado de
-                                chocolate brillante para un acabado sofisticado. El sabor intenso del chocolate y la
-                                textura suave y cremosa de la trufa hacen que sea una opción perfecta para los amantes
-                                del chocolate, y es una delicia popular en cualquier celebración o evento especial.<br>
-                                $24000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta11.jpg' %}" class="card-img-top" alt="Torta de Piña">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Piña</h5>
-                            <p class="card-text">La torta de piña es un postre tropical y refrescante, hecho con una
-                                masa de bizcocho suave y esponjosa, cubierta con rodajas de piña caramelizada y un
-                                glaseado dulce. El sabor dulce y jugoso de la piña se combina perfectamente con la
-                                textura suave del bizcocho, creando un postre delicioso y ligero que es ideal para
-                                disfrutar en cualquier ocasión. Es una opción popular para los días calurosos de verano
-                                y para aquellos que buscan un postre más ligero y fresco. <br>
-                                $20000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta12.jpg' %}" class="card-img-top" alt="Torta de Durazno">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Durazno</h5>
-                            <p class="card-text">La torta de durazno es un postre dulce y aromático, hecho con una masa
-                                de bizcocho suave y esponjosa, cubierta con rodajas de durazno fresco o en almíbar y a
-                                menudo decorada con crema batida. El sabor dulce y jugoso de los duraznos se mezcla con
-                                la textura suave del bizcocho, creando una combinación deliciosa y refrescante que es
-                                perfecta para cualquier ocasión. Es una opción popular para los días de verano y para
-                                aquellos que buscan un postre más ligero y frutal.<br>
-                                $20000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/torta14.jpg' %}" class="card-img-top" alt="Torta de Maracuyá">
-                        <div class="card-body">
-                            <h5 class="card-title">Torta de Maracuyá</h5>
-                            <p class="card-text">La torta de maracuyá es un postre tropical y refrescante, hecho con una
-                                masa de bizcocho suave y esponjosa, rellena con una cremosa y deliciosa mousse de
-                                maracuyá y a menudo decorada con crema batida y semillas de maracuyá frescas. El sabor
-                                agridulce del maracuyá se combina perfectamente con la textura suave del bizcocho y la
-                                cremosidad de la mousse, creando un postre ligero y delicioso que es ideal para
-                                disfrutar en cualquier momento del año.<br>
-                                $25000 por unidad</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mt-3">
-                    <div class="card shadow" style="width: 18rem; height: 51rem;">
-                        <img src="{% static 'img/tortadecorada.jpg' %}" class="card-img-top" alt="Torta Personalizada">
-                        <div class="card-body">
-                            <h5 class="card-title">Personaliza tu Torta para Celebraciones</h5>
-                            <p class="card-text">Personalizar una torta es una forma única y especial de crear un postre
-                                que refleje la personalidad y el gusto del homenajeado. Desde la elección del sabor y
-                                tipo de masa de bizcocho, hasta la selección del relleno y la decoración, cada detalle
-                                puede ser personalizado para crear una torta única y especial.<br>
-                                $20000 adicional para cada torta</p>
-                            <button type="button" class="btn btn-outline-danger">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-             </div><br></center>
-            </div>
-            <br><br><br>
-            <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline">
-                <div class="container">
-                    <br>
-                    <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 </p>
-                </div>
-            </footer>
+                    {% endif %}
+                    {% endfor %}
+                </div><br>
+            </center>
+        </div>
+    </section>
+    <br><br><br>
+    <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline">
+        <div class="container">
+            <br>
+            <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 </p>
+        </div>
+    </footer>
 
 </body>
 

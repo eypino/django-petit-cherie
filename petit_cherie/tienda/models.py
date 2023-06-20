@@ -22,7 +22,7 @@ class Usuario(models.Model):
     nro_usuario         = models.AutoField(db_column='Usuario', primary_key=True) 
     correo              = models.CharField(max_length=50, blank=False, null=False)
     nombres             = models.CharField(max_length=60, blank=False, null=False)
-    apellidos           = models.CharField(max_length=30, blank=False, null=False)
+    apellidos           = models.CharField(max_length=60, blank=False, null=False)
     rut                 = models.CharField(max_length=10, blank=False, null=False)
     fecha_nac           = models.DateField(blank=False, null=False)
     telefono            = models.IntegerField(blank=False, null=False)
@@ -44,11 +44,11 @@ class TipoProducto(models.Model):
 
 class Producto(models.Model):
     id_producto      = models.AutoField(primary_key=True)
-    nombre_producto  = models.CharField(max_length=20)
+    nombre_producto  = models.CharField(max_length=30)
     descripcion_prod = models.CharField(max_length=1000)
     valor_prod       = models.IntegerField(blank=False, null=False) 
-    imagen_prod      = models.ImageField(blank=False, null=False)
-    id_tipo_producto = models.ForeignKey('TipoProducto', on_delete=models.CASCADE, db_column='idTipoProducto')
+    imagen_prod      = models.ImageField(upload_to='img/', blank=False, null=False)
+    id_tipo_producto = models.ForeignKey('tipoProducto', on_delete=models.CASCADE, db_column='idTipoProducto')
 
     def __str__(self):
         return str(self.nombre_producto)   
