@@ -20,7 +20,7 @@ from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleri
 from django.conf import settings
 from django.conf.urls.static import static
 
-from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta,incercion,editar,eliminar
+from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta,insercion,editar,eliminar
 	
 
 urlpatterns = [
@@ -36,7 +36,9 @@ urlpatterns = [
     path('quienes_somos',quienesSomos,name='quienesSomos'),
     path('recuperar_contrasena',recuperarContrasena,name='recuperarContrasena'),
     path('recuperar_cuenta',recuperarCuenta,name='recuperarCuenta'),
-    
+    path('insercion',insercion,name='insercion'),
+    path('editar',editar,name='editar'),
+    path('eliminar',eliminar,name='eliminar'),
 ]
 
 if settings.DEBUG:
