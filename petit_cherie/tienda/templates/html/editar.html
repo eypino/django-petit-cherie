@@ -67,7 +67,8 @@
       </header>
 
       <section style="margin-bottom: 60px;">
-        <form action="" onsubmit="" id="formaReg" class="mx-auto">
+        <!--AGREGUE  action="modificarProducto" method="post"-->
+        <form action="" onsubmit="" id="formaReg" class="mx-auto" action="modificarProducto" method="post">
             <div class="container w-100 mt-5 bg-white rounded shadow " id="divFormaReg">
                 <div class="row align-items-center">
                     <div class="text-center mt-3">
@@ -75,6 +76,7 @@
                     </div>
                     <h1 class="text-center mx-auto">Edicion de productos</h1>
                     <!--NOMBRES PRODUCTO-->
+                    <form action="">
                     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
                         <label class="w-75">Nombre del Producto</label>
                         <input class="w-75 form-control" type="text" name="Nombres_producto" id="productoReg"
@@ -116,7 +118,7 @@
                           <a class="btn btn-dark w-75" href="{% url 'eliminar' %}" id="botonCompletarReg" type="button">Eliminar</a>
                         </div>
                         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-                          <a class="btn btn-dark w-75" href="{% url 'insercion' %}" id="botonBorrarReg" type="reset">Insertar</a>
+                          <a class="btn btn-dark w-75" href="{%  url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar</a>
                         </div>
                     </div>
                 </div>
@@ -129,14 +131,6 @@
           <br>
           <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
             <a href="/admin">Ir a la página de administración</a>
-<<<<<<< HEAD
-=======
-            {% if user.is_authenticated and user.is_staff %}
-            <a href="{% url 'insercion' %}" class="btn btn-primary">Inserción</a>
-            <a href= "{% url 'editar' %}" class="btn btn-dark">Editar</a>
-            <a href="{% url 'eliminar' %}" class="btn btn-danger">Eliminar</a>
-            {% endif %}
->>>>>>> 347b16cd2816b27e174762541ba6b2297b3ffd62
           </p>
         </div>
       </footer>
