@@ -30,7 +30,7 @@ def login(request):
 def registro(request):
     context={}
     return render(request,'html/paginaRegistro.html', context)    
-       
+    
 def panaderia(request):
     context={}
     return render(request,'html/Panaderia.html', context)         
@@ -165,3 +165,7 @@ def modificarProducto(request):
         context={'mascota':mascota}
         return render(request,'admin_mascota.html',context)
 '''
+def administracion(request): 
+    productos=Producto.objects.all()  
+    context={'productos':productos}
+    return render(request, 'html/administracion.html', context)    
