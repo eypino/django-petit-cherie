@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta
+
 from django.conf import settings
 from django.conf.urls.static import static
 
-from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta,insercion,editar,eliminar
+from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta,insercion,editar,eliminar,administracion
 	
 
 urlpatterns = [
@@ -39,6 +39,7 @@ urlpatterns = [
     path('insercion',insercion,name='insercion'),
     path('editar',editar,name='editar'),
     path('eliminar',eliminar,name='eliminar'),
+    path('administracion',administracion,name='administracion'),
 ]
 
 if settings.DEBUG:
