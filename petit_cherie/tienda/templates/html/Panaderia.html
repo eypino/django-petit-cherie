@@ -103,48 +103,53 @@
   </footer>
   <div id="carroModal" class="modal">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!-- Encabezado del modal (opcional) -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-light table-hover">
+            <thead>
+              <tr class="text-carrito">
+                <th scope="col">#</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td class="table-productos">
+                  <img src="{% static 'img/img1.jpg'%}" alt="Blackberry Cupcake" class="img-carrito">
+                  <h4 class="title">Blackberry Cupcake</h4>
+                </td>
+                <td class="table-precio">
+                  <p>$2000</p>
+                </td>
+                <td class="table-cantidad">
+                  <input type="number" min="0" value="1" style="max-width: 60px;">
+                  <button class="delete btn btn-danger">X</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row mx-4">
+            <div class="col">
+              <h3 class="itemCartTotal text-carrito">Total: $0</h3>
             </div>
-            <div class="modal-body">
-                <table class="table table-light table-hover">
-                    <thead>
-                        <tr class="text-carrito">
-                            <th scope="col">#</th>
-                            <th scope="col">Productos</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td class="table-productos">
-                                <img src="{% static 'img/img1.jpg'%}" alt="Blackberry Cupcake"
-                                    class="img-carrito">
-                                <h4 class="title">Blackberry Cupcake</h4>
-                            </td>
-                            <td class="table-precio">
-                                <p>$2000</p>
-                            </td>
-                            <td class="table-cantidad">
-                                <input type="number" min="0" value="1" style="max-width: 60px;">
-                                <button class="delete btn btn-danger">X</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="row mx-4">
-                    <div class="col">
-                        <h3 class="itemCartTotal text-carrito">Total: $0</h3>
-                    </div>
-                    <div class="col d-flex justify-content-end">
-                        <button class="btn btn-dark">Pagar</button>
-                    </div>  
-                </div>
+            <div class="col d-flex justify-content-end">
+              <button class="btn btn-dark">Pagar</button>
             </div>
-            <div class="modal-footer">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- Pie del modal (opcional) -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
                 <!-- Pie del modal (opcional) -->
             </div>
         </div>
