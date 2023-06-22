@@ -74,24 +74,37 @@
                     <th scope="col">Productos</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
+                    <th scope="col">botones</th>
                 </tr>
             </thead>
+            {% if request.session.carrito.item %}
+            {% for key, value in request.session.carrito.item %}
             <tbody>
                 <tr>
                     <th scope="row">1</th>
                     <td class="table-productos">
                         <img src="{% static 'img/img1.jpg'%}" alt="Blackberry Cupcake" class="img-carrito">
-                        <h4 class="title">Blackberry Cupcake</h4>
+                        <h4 class="title">{{value.nombre}}</h4>
                     </td>
                     <td class="table-precio">
-                        <p>$2000</p>
+                        <p>{{value.precio}}</p>
                     </td>
                     <td class="table-cantidad">
                         <input type="number" min="0" value="1" style="max-width: 60px;">
-                        <button class="delete btn btn-danger">X</button>
+                        <button class="delete btn btn-danger">{{value.cantidad}}</button>
+                    </td>
+                    <td>
+                      <a href="{% url 'add' value.producto_id %}" class="badge btn btn-dark">+</a>
+                      <a href="{% url 'sub' value.producto_id %}" class="badge btn btn-dark">-</a>
                     </td>
                 </tr>
             </tbody>
+            {% endfor %}
+            {% else %}
+            <tr>
+              <td>sin productos</td>
+            </tr>
+            {% endif %}
         </table>
         <br><br>
         <div class="row mx-4">

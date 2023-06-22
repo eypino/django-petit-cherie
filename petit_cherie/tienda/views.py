@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.template import loader
 
@@ -16,7 +16,8 @@ def tienda (request):
 
 def carrito(request):
     context={}
-    return render(request,'html/CarroDeCompras.html', context)
+    productos = Carrito.objects.all()
+    return render(request,'html/CarroDeCompras.html',{'productos':productos})
 
 def tienda(request):
     context={}
@@ -64,4 +65,47 @@ def editar(request):
 
 def eliminar(request):
     context={}
+<<<<<<< Updated upstream
     return render(request,'html/eliminar.html', context)    
+=======
+    return render(request,'html/eliminar.html', context)    
+
+
+def panaderia(request):
+    productos=Producto.objects.all()
+    context={'productos':productos}
+    return render(request, 'html/Panaderia.html', context)
+
+def pasteleria(request):
+    productos=Producto.objects.all()
+    context={'productos':productos}
+    return render(request, 'html/pasteleria.html', context)
+
+def tortas(request):
+    productos=Producto.objects.all()
+    context={'productos':productos}
+    return render(request, 'html/tortas.html', context)
+
+def agregar_producto_carito(request,producto_id):
+    carrito = carrito(request)
+    producto = Carrito.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return redirect('carrito')
+
+def eliminar_producto_carito(request,producto_id):
+    carrito = carrito(request)
+    producto = Carrito.objects.get(id=producto_id)
+    carrito.remove(producto)
+    return redirect('carrito')
+
+def restar_producto_carito(request,producto_id):
+    carrito = carrito(request)
+    producto = Carrito.objects.get(id=producto_id)
+    carrito.decrement(producto)
+    return redirect('carrito')
+
+def limpiar_carrito(request):
+    carrito = carrito(request)
+    carrito.clear()
+    return redirect('carrito')
+>>>>>>> Stashed changes

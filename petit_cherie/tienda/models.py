@@ -65,4 +65,16 @@ class DetalleCompra(models.Model):
         unique_together = ('nro_compra', 'nro_item',)
 
     def __str__(self):
+<<<<<<< Updated upstream
         return str(self.id_producto)+ " " +str(self.cantidad)+ " $"+str(self.valor_item)
+=======
+        return str(self.nro_item)+ " " +str(self.id_producto)+ " " +str(self.cantidad)+ " $"+str(self.valor_item)
+    
+class Carrito(models.Model):
+    producto = models.CharField(max_length=30)
+    precio = models.IntegerField()
+    cantidadProducto = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.producto} -> {self.precio}'
+>>>>>>> Stashed changes
