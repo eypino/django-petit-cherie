@@ -71,7 +71,7 @@
       {{ mensaje }}
     </div>
     {% endif %}
-    <form method="POST" action="{% url 'agregarProducto' %}" >
+    <form method="POST" action="{% url 'agregarProducto' %}" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="mb-3">
         <label for="Nombre_producto" class="form-label">Nombre del Producto</label>
@@ -94,7 +94,7 @@
         </select>
       </div>
       <div class="mb-3">
-        <label for="formFile" class="form-label" enctype="multipart/form-data">Imagen del Producto</label>
+        <label for="formFile" class="form-label" >Imagen del Producto</label>
         <input class="form-control" type="file" id="formFile" name="formFile" required>
       </div>
       <button type="submit" class="btn btn-primary">Agregar</button>

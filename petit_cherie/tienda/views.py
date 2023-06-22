@@ -106,7 +106,7 @@ def agregarProducto(request):
             imagen_prod=imagen,
             id_tipo_producto=objtipoProducto
         )
-        producto.imagen_prod.save(imagen.name, imagen)
+        
         producto.save()
 
         context = {'mensaje': 'OK, datos guardados con éxito'}
