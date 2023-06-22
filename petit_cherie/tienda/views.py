@@ -108,63 +108,70 @@ def agregarProducto(request):
         )
         
         producto.save()
-
+        tipoProductos = TipoProducto.objects.all()
         context = {'mensaje': 'OK, datos guardados con éxito'}
         return render(request, 'html/insercion.html', context)
-'''
+    
+
 def eliminarProducto(request, pk):
     context={}
     try:
-        mascota=Mascota.objects.get(id_mascota=pk)
-        mascota.delete()
-        mensaje="Ok, Datos eliminados satisfactoriamente"
-        mascotas=Mascota.objects.all()
-        context={'mascota':mascotas, 'mensaje':mensaje}
-        return render(request, 'admin_mascota.html', context)
+        producto=Producto.objects.get(id_producto=pk)
+        producto.delete()
+        mensaje="Ok, Producto eliminado satisfactoriamente"
+        productos=Producto.objects.all()
+        context={'productos':productos, 'mensaje':mensaje}
+        return render(request, 'html/administracion.html', context)
     except: 
-        mensaje="Error, id mascota no existe"
-        mascotas=Mascota.objects.all()
-        context={'mascota':mascotas, 'mensaje':mensaje}
-        return render(request, 'admin_mascota.html', context)
+        mensaje="Error, id producto no existe"
+        productos=Producto.objects.all()
+        context={'productos':productos, 'mensaje':mensaje}
+        return render(request, 'html/administracion.html', context)
+    
+    
     
 def encontrarProducto(request, pk):
     if pk != " ":
-        mascota=Mascota.objects.get(id_mascota=pk)
-        sexos=Sexo.objects.all()
-        print(type(mascota.id_sexo.sexo))
-        context={'mascota':mascota, 'sexo':sexos}
-        if mascota:
-            return render(request, 'editar_mascota.html', context)
+        producto=Producto.objects.get(id_producto=pk)
+        tipoProductos=TipoProducto.objects.all()
+        print(type(tipoProductos.id_tipo_producto.tipoProducto))
+        context={'producto':producto, 'tipo_producto':tipoProductos}
+        if producto:
+            return render(request, 'html/editar.html', context)
         else: 
-            context={'mensaje':'Error, id de mascota no existe'}
-            return render (request, 'admin_mascota.html', context)
-        
+            context={'mensaje':'Error, id de producto no existe'}
+            return render (request, 'html/editar.html', context)
+
+
+
 def modificarProducto(request):
     if request.method == "POST":
-        idMascota=request.POST["id_mascota"]
-        nombre=request.POST["nombre_mascota"]
-        fecha_nac=request.POST["fechaNac"]
-        raza=request.POST["razaMasc"]
-        sexo=request.POST["sexo"]
+        idProducto=request.POST.get("id_producto")
+        nombreProducto = request.POST.get("Nombre_producto")
+        descripcionProducto = request.POST.get("Descripcion_producto")
+        precioProducto = request.POST.get("Precio")
+        tipoProductoID = request.POST.get("Seccion")
+        imagen = request.FILES.get("formFile") 
         
     
-        objSexo=Sexo.objects.get(id_sexo = sexo)
+        objTipoProducto=TipoProducto.objects.get(id_tipo_producto = tipoProductoID)
 
-        mascota=Mascota()
-        mascota.id_mascota=idMascota
-        mascota.nombre=nombre
-        mascota.fecha_nacimiento=fecha_nac
-        mascota.raza=raza
-        mascota.id_sexo=objSexo
-        mascota.save()
-        sexos=Sexo.objects.all()
-        context={'mensaje':'OK, datos actualizados con éxito','sexo':sexos,'mascota':mascota}
-        return render(request,'editar_mascota.html',context)
+        producto=Producto()
+        producto.id_producto=idProducto
+        producto.nombre_producto=nombreProducto
+        producto.descripcion_prod=descripcionProducto
+        producto.valor_prod=precioProducto
+        producto.id_tipo_producto=objTipoProducto
+        producto.imagen_prod=imagen
+        producto.save()
+        #tipoProductos=TipoProducto.objects.all()
+        context={'mensaje':'OK, datos actualizados con éxito','tipoProducto':tipoProductoID,'producto':producto}
+        return render(request,'html/editar.html',context)
     else:
-        mascota=Mascota.objects.all()
-        context={'mascota':mascota}
-        return render(request,'admin_mascota.html',context)
-'''
+        producto=Producto.objects.all()
+        context={'producto':producto}
+        return render(request,'html/editar.html',context)
+
 def administracion(request): 
     productos=Producto.objects.all()  
     context={'productos':productos}

@@ -67,14 +67,13 @@
       </header>
 
       <section style="margin-bottom: 60px;">
-        <!--AGREGUE  action="modificarProducto" method="post"-->
-        <form action="" onsubmit="" id="formaReg" class="mx-auto" action="modificarProducto" method="post">
+        <form onsubmit="" id="formaReg" class="mx-auto" action="{% url 'modificarProducto' %}" method="POST" enctype="multipart/form-data">
             <div class="container w-100 mt-5 bg-white rounded shadow " id="divFormaReg">
                 <div class="row align-items-center">
                     <div class="text-center mt-3">
                         <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
                     </div>
-                    <h1 class="text-center mx-auto">Edicion de productos</h1>
+                    <h1 class="text-center mx-auto">Editar de productos</h1>
                     <!--NOMBRES PRODUCTO-->
                     <form action="">
                     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
@@ -84,8 +83,8 @@
                     </div>
                     <!--DESCRIPCION-->
                     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-                    <label class="w-75">Decripcion del Producto</label>
-                    <textarea class="w-75 form-control" type="text" name="Decripcion_producto" id="descripcionReg"
+                    <label class="w-75">Descripcion del Producto</label>
+                    <textarea class="w-75 form-control" type="text" name="Descripcion_producto" id="descripcionReg"
                     placeholder=""></textarea>
                     </div>
                     <!--PRECIO-->
@@ -96,8 +95,8 @@
                     </div>
                     <!--SECCION-->
                     <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-                        <label class="w-75">Seccion</label>
-                        <select class="form-select w-75 text-start" name="Seccion" id="secciono">
+                        <label class="w-75">Sección</label>
+                        <select class="form-select w-75 text-start" name="Seccion" id="seccion">
                             <option selected>Indique la seccion del producto </option>
                             <option>Panaderia</option>
                             <option>Pasteleria</option>
@@ -109,7 +108,7 @@
                           <input class="form-control w-75" type="file" id="formFile">
                         </div> 
                         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-                            <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="button">Modificar</button>
+                            <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="submit">Modificar</button>
                         </div>
                         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
                             <button class="btn btn-danger w-75 mb-5" id="botonBorrarReg" type="reset">Limpiar</button>

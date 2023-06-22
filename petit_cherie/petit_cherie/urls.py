@@ -38,8 +38,8 @@ urlpatterns = [
     path('recuperar_contrasena',recuperarContrasena,name='recuperarContrasena'),
     path('recuperar_cuenta',recuperarCuenta,name='recuperarCuenta'),
     path('insercion',agregarProducto,name='agregarProducto'),
-    path('editar',editar,name='editar'),
-    path('eliminar',eliminar,name='eliminar'),
+    path('editar',modificarProducto,name='editar'),
+    path('eliminar/<int:pk>/', eliminarProducto, name='eliminarProducto'),
     path('administracion',administracion,name='administracion'),
 ]
 

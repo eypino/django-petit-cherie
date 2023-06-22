@@ -93,7 +93,7 @@
                     <td>{{ i.descripcion_prod }}</td>
                     <td>{{ i.valor_prod }}</td>
                     <td>{{ i.id_tipo_producto }}</td>
-                    <td><button class="btn btn-primary w-75 mb-5" href="" id="botonEliminarFila" type="button">Eliminar</button></td>
+                    <td><a class="btn btn-primary w-75 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}" id="botonEliminarFila" type="button">Eliminar</a></td>
                     <td><button class="btn btn-primary w-75 mb-5" href="" id="botonModificarFila" type="button">Modificar</button></td>
                   </tr>
                   {% endfor %}
