@@ -55,8 +55,8 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
-              </li>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#carroModal">Carro</a>
+            </li>
               <li class="nav-item">
                 <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button"
                   aria-disabled="true">Iniciar Sesión</a>
@@ -81,7 +81,8 @@
                 <h5 class="card-title">{{ n.nombre_producto }}</h5>
                 <p class="card-text">{{ n.descripcion_prod }}<br>
                   ${{ n.valor_prod }} por kilo</p>
-                <button type="button" class="btn btn-outline-danger" >Añadir</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                  data-bs-target="#carroModal">Añadir</button>
               </div>
             </div>
           </div>
@@ -98,10 +99,60 @@
       <br>
       <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
         <a href="{%url 'administracion' %}">Ir a la página de administración</a>
-
     </div>
   </footer>
-
+  <div id="carroModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Encabezado del modal (opcional) -->
+            </div>
+            <div class="modal-body">
+                <table class="table table-light table-hover">
+                    <thead>
+                        <tr class="text-carrito">
+                            <th scope="col">#</th>
+                            <th scope="col">Productos</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td class="table-productos">
+                                <img src="{% static 'img/img1.jpg'%}" alt="Blackberry Cupcake"
+                                    class="img-carrito">
+                                <h4 class="title">Blackberry Cupcake</h4>
+                            </td>
+                            <td class="table-precio">
+                                <p>$2000</p>
+                            </td>
+                            <td class="table-cantidad">
+                                <input type="number" min="0" value="1" style="max-width: 60px;">
+                                <button class="delete btn btn-danger">X</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row mx-4">
+                    <div class="col">
+                        <h3 class="itemCartTotal text-carrito">Total: $0</h3>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="btn btn-dark">Pagar</button>
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- Pie del modal (opcional) -->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
