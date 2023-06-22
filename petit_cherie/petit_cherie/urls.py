@@ -38,7 +38,7 @@ urlpatterns = [
     path('recuperar_contrasena',recuperarContrasena,name='recuperarContrasena'),
     path('recuperar_cuenta',recuperarCuenta,name='recuperarCuenta'),
     path('insercion',agregarProducto,name='agregarProducto'),
-    path('editar',modificarProducto,name='editar'),
+    path('editar',modificarProducto,name='modificarProducto'),
     path('eliminar/<int:pk>/', eliminarProducto, name='eliminarProducto'),
     path('administracion',administracion,name='administracion'),
 ]

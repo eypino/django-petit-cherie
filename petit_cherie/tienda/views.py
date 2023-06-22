@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import *
+from django.shortcuts import *
 
 
 # Create your views here.
@@ -29,19 +30,7 @@ def login(request):
 
 def registro(request):
     context={}
-    return render(request,'html/paginaRegistro.html', context)    
-    
-def panaderia(request):
-    context={}
-    return render(request,'html/Panaderia.html', context)         
-
-def pasteleria(request):
-    context={}
-    return render(request,'html/pasteleria.html', context)       
-
-def tortas(request):
-    context={}
-    return render(request,'html/tortas.html', context)   
+    return render(request,'html/paginaRegistro.html', context)       
 
 def quienesSomos(request):
     context={}
@@ -127,50 +116,45 @@ def eliminarProducto(request, pk):
         productos=Producto.objects.all()
         context={'productos':productos, 'mensaje':mensaje}
         return render(request, 'html/administracion.html', context)
-    
-    
-    
+
 def encontrarProducto(request, pk):
     if pk != " ":
-        producto=Producto.objects.get(id_producto=pk)
-        tipoProductos=TipoProducto.objects.all()
-        print(type(tipoProductos.id_tipo_producto.tipoProducto))
-        context={'producto':producto, 'tipo_producto':tipoProductos}
+        producto = Producto.objects.get(id_producto=pk)
+        tipoProductos = TipoProducto.objects.all()
+        context = {'producto': producto, 'tipo_producto': tipoProductos}
         if producto:
             return render(request, 'html/editar.html', context)
-        else: 
-            context={'mensaje':'Error, id de producto no existe'}
-            return render (request, 'html/editar.html', context)
-
-
+        else:
+            context = {'mensaje': 'Error, el ID del producto no existe'}
+            return render(request, 'html/editar.html', context)
 
 def modificarProducto(request):
     if request.method == "POST":
-        idProducto=request.POST.get("id_producto")
+        idProducto = request.POST.get("id_producto")
         nombreProducto = request.POST.get("Nombre_producto")
         descripcionProducto = request.POST.get("Descripcion_producto")
         precioProducto = request.POST.get("Precio")
         tipoProductoID = request.POST.get("Seccion")
-        imagen = request.FILES.get("formFile") 
-        
-    
-        objTipoProducto=TipoProducto.objects.get(id_tipo_producto = tipoProductoID)
+        imagen = request.FILES.get("formFile")
 
-        producto=Producto()
-        producto.id_producto=idProducto
-        producto.nombre_producto=nombreProducto
-        producto.descripcion_prod=descripcionProducto
-        producto.valor_prod=precioProducto
-        producto.id_tipo_producto=objTipoProducto
-        producto.imagen_prod=imagen
+        objTipoProducto = TipoProducto.objects.get(id_tipo_producto=tipoProductoID)
+
+        producto = Producto.objects.get(id_producto=idProducto)
+        producto.nombre_producto = nombreProducto
+        producto.descripcion_prod = descripcionProducto
+        producto.valor_prod = precioProducto
+        producto.id_tipo_producto = objTipoProducto
+        producto.imagen_prod = imagen
         producto.save()
-        #tipoProductos=TipoProducto.objects.all()
-        context={'mensaje':'OK, datos actualizados con éxito','tipoProducto':tipoProductoID,'producto':producto}
-        return render(request,'html/editar.html',context)
+
+        context = {'mensaje': 'OK, datos actualizados con éxito', 'tipoProducto': tipoProductoID, 'producto': producto}
+        return render(request, 'html/editar.html', context)
     else:
-        producto=Producto.objects.all()
-        context={'producto':producto}
-        return render(request,'html/editar.html',context)
+        producto = Producto.objects.all()
+        context = {'producto': producto}
+        return render(request, 'html/editar.html', context)
+
+
 
 def administracion(request): 
     productos=Producto.objects.all()  
