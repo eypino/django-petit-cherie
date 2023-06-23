@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tienda',
-    'location_field.apps.DefaultConfig',
 ]
 
 MIDDLEWARE = [
