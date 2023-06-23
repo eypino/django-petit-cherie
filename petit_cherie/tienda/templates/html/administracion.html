@@ -67,45 +67,47 @@
   </header>
 
   <section style="margin-bottom: 60px;">
-    <h1><div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-      Administración de sistema.
-    </div></h1>
+  
     <form action="" onsubmit="" id="formaReg" class="mx-auto">
       <div class="container w-100 mt-5 bg-white rounded shadow " id="divFormaReg">
         <div class="row align-items-center">
           <div class="text-center mt-3 col-12">
+            <div class="text-center mt-3">
+              <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
+                <h1 class="text-center mx-auto">
+                Administración del sistema</h1>
+            </div>
             <table class="table col-12">
               
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">Imagen</th>
                   <th scope="col">Producto</th>
-                  <th scope="col">Decripcion</th>
+                  <th scope="col">Descripción</th>
                   <th scope="col">Precio</th>
-                  <th scope="col">Seccion</th>
+                  <th scope="col">Sección</th>
+                  <th scope="col">Acciones</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
                 {% for i in productos %}
                   <tr>
-                    <td>{{ i.id_producto }}</td>
+                    <td><img src="{% static i.imagen_prod %}" style="width: 30%;"</td>
                     <td>{{ i.nombre_producto }}</td>
                     <td>{{ i.descripcion_prod }}</td>
                     <td>{{ i.valor_prod }}</td>
                     <td>{{ i.id_tipo_producto }}</td>
-                    <td><a class="btn btn-primary w-75 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}" id="botonEliminarFila" type="button">Eliminar</a></td>
-                    <td><button class="btn btn-primary w-75 mb-5" href="" id="botonModificarFila" type="button">Modificar</button></td>
+                    <td><a class="btn btn-primary w-100 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}" id="botonEliminarFila" type="button">Eliminar</a></td>
+                    <td><a class="btn btn-primary w-100 mb-5" href="{% url 'modificarProducto' pk=i.id_producto %}" id="botonModificarFila" type="button">Modificar</a></td>
                   </tr>
                   {% endfor %}
               </tbody>
             </table>
-            <div class="row col-12">
-              <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-                <a class="btn btn-dark w-75" href="{% url 'editar' %}" id="botonCompletarReg" type="button">Editar</a>
-              </div>
-              <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-                <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar</a>
-              </div>
+            
+            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center d-flex" style="margin: 0 auto;">
+              <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar Nuevo Producto</a>
+            </div>            
             </div>
           </div>
         </div>

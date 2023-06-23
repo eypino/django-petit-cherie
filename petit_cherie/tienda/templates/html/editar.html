@@ -67,54 +67,64 @@
   </header>
 
   <section style="margin-bottom: 60px;">
-    <form onsubmit="" id="formaReg" class="mx-auto" action="{% url 'modificarProducto' %}" method="POST"
-      enctype="multipart/form-data">
+    <form id="formaReg" class="mx-auto" action="{% url 'modificarProducto' pk=producto.id_producto %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
       <div class="container w-100 mt-5 bg-white rounded shadow" id="divFormaReg">
         <div class="row align-items-center">
           <div class="text-center mt-3">
             <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
           </div>
-          <h1 class="text-center mx-auto">Editar de productos</h1>
+          <h1 class="text-center mx-auto">Modificar productos</h1>
+          <input class="w-75 form-control" type="text" name="id_producto" id="productoReg" value="{{ producto.id_producto }}" hidden>
           <!--NOMBRES PRODUCTO-->
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
             <label class="w-75">Nombre del Producto</label>
-            <input class="w-75 form-control" type="text" name="Nombre_producto" id="productoReg" placeholder="">
+            <input class="w-75 form-control" type="text" name="Nombre_producto" id="productoReg" value="{{ producto.nombre_producto }}">
           </div>
           <!--DESCRIPCION-->
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
             <label class="w-75">Descripcion del Producto</label>
             <textarea class="w-75 form-control" type="text" name="Descripcion_producto" id="descripcionReg"
-              placeholder=""></textarea>
+              placeholder="">{{ producto.descripcion_prod }}</textarea>
           </div>
           <!--PRECIO-->
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
             <label class="w-75">Precio del Producto</label>
-            <input class="w-75 form-control text-start" type="text" name="Precio" id="precioReg" placeholder="">
+            <input class="w-75 form-control text-start" type="text" name="Precio" id="precioReg" value="{{ producto.valor_prod }}">
           </div>
           <!--SECCION-->
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
             <label class="w-75">Sección</label>
             <select class="form-select w-75 text-start" name="Seccion" id="seccion">
-              <option selected>Indique la seccion del producto </option>
-              <option>Panaderia</option>
-              <option>Pasteleria</option>
-              <option>Tortas</option>
+              <option value="{{ producto.id_tipo_producto.id_tipo_producto }}" selected>{{ producto.id_tipo_producto }}</option>
+              {% for tipoProducto in tipo_producto %}
+                {% if tipoProducto.id_tipo_producto != producto.id_tipo_producto.id_tipo_producto %}
+                  <option value="{{ tipoProducto.id_tipo_producto }}">{{ tipoProducto }}</option>
+                {% endif %}
+              {% endfor %}
             </select>
+          
           </div>
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-3 justify-content-center">
             <label for="formFile" class="w-75 form-label">Seleccione un archivo</label>
-            <input class="form-control w-75" type="file" name="formFile" id="formFile">
+            <input class="form-control w-75" type="file" name="formFile" id="formFile" value="{{ producto.imagen_prod }}">
+          </div>
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-3 justify-content-center">
+            <label>Imagen actual:</label>
+          </div>
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-3 justify-content-center">
+            <img src="{{ producto.imagen_prod.url }}" alt="{{ producto.nombre_producto }}" style="max-width: 300px; max-height: 300px;">
           </div>
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
             <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="submit">Modificar</button>
           </div>
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <button class="btn btn-danger w-75 mb-5" id="botonBorrarReg" type="reset">Limpiar</button>
+            <button class="btn btn-danger w-75 mb-5" id="botonBorrarReg" type="button">Cancelar</button>
           </div>
 
           <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-            <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg"
-              type="reset">Insertar</a>
+            <a class="btn btn-dark w-75" href="{% url 'administracion' %}" id="Volver"
+              type="button">Volver</a>
           </div>
         </div>
       </div>

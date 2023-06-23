@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import *
 from django.shortcuts import *
+from django.urls import reverse
 
 
 # Create your views here.
@@ -117,44 +118,50 @@ def eliminarProducto(request, pk):
         context={'productos':productos, 'mensaje':mensaje}
         return render(request, 'html/administracion.html', context)
 
-def encontrarProducto(request, pk):
-    if pk != " ":
-        producto = Producto.objects.get(id_producto=pk)
-        tipoProductos = TipoProducto.objects.all()
-        context = {'producto': producto, 'tipo_producto': tipoProductos}
-        if producto:
-            return render(request, 'html/editar.html', context)
-        else:
-            context = {'mensaje': 'Error, el ID del producto no existe'}
-            return render(request, 'html/editar.html', context)
-
-def modificarProducto(request):
+def modificarProducto(request, pk):
     if request.method == "POST":
         idProducto = request.POST.get("id_producto")
         nombreProducto = request.POST.get("Nombre_producto")
         descripcionProducto = request.POST.get("Descripcion_producto")
         precioProducto = request.POST.get("Precio")
         tipoProductoID = request.POST.get("Seccion")
-        imagen = request.FILES.get("formFile")
+        imagen = request.FILES.get("formFile") 
 
-        objTipoProducto = TipoProducto.objects.get(id_tipo_producto=tipoProductoID)
+        objtipoProducto = TipoProducto.objects.get(id_tipo_producto=tipoProductoID)
 
-        producto = Producto.objects.get(id_producto=idProducto)
+        try:
+            producto = Producto.objects.get(id_producto=idProducto)
+        except Producto.DoesNotExist:
+            context = {'mensaje': 'Error, el ID del producto no existe'}
+            return render(request, 'html/editar.html', context)
+
         producto.nombre_producto = nombreProducto
         producto.descripcion_prod = descripcionProducto
         producto.valor_prod = precioProducto
-        producto.id_tipo_producto = objTipoProducto
-        producto.imagen_prod = imagen
+        producto.id_tipo_producto = objtipoProducto
+        if imagen:
+            producto.imagen_prod = imagen
         producto.save()
 
-        context = {'mensaje': 'OK, datos actualizados con éxito', 'tipoProducto': tipoProductoID, 'producto': producto}
+        context = {
+            'mensaje': 'OK, datos actualizados con éxito',
+            'tipoProducto': producto.id_tipo_producto,
+            'producto': producto
+        }
         return render(request, 'html/editar.html', context)
     else:
-        producto = Producto.objects.all()
-        context = {'producto': producto}
-        return render(request, 'html/editar.html', context)
-
-
+        if pk:
+            try:
+                producto = Producto.objects.get(id_producto=pk)
+                tipoProductos = TipoProducto.objects.all()
+                context = {'producto': producto, 'tipo_producto': tipoProductos}
+                return render(request, 'html/editar.html', context)
+            except Producto.DoesNotExist:
+                context = {'mensaje': 'Error, el ID del producto no existe'}
+                return render(request, 'html/editar.html', context)
+        else:
+            context = {'mensaje': 'Error, el ID del producto no existe'}
+            return render(request, 'html/editar.html', context)
 
 def administracion(request): 
     productos=Producto.objects.all()  
