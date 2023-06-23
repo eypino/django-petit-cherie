@@ -4,6 +4,8 @@ from django.template import loader
 from .models import *
 from django.shortcuts import *
 from django.urls import reverse
+from django.conf import *
+
 
 
 # Create your views here.

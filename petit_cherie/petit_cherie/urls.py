@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from tienda.views import *
-from tienda.views import index,carrito,login,tienda,registro,panaderia,pasteleria,tortas,quienesSomos,recuperarContrasena,recuperarCuenta,insercion,editar,eliminar,administracion
+
 	
 
 urlpatterns = [
