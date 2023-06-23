@@ -67,18 +67,23 @@
   </header>
 
   <section style="margin-bottom: 60px;">
-  
+
     <form action="" onsubmit="" id="formaReg" class="mx-auto">
       <div class="container w-100 mt-5 bg-white rounded shadow " id="divFormaReg">
         <div class="row align-items-center">
           <div class="text-center mt-3 col-12">
             <div class="text-center mt-3">
               <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
-                <h1 class="text-center mx-auto">
+              <h1 class="text-center mx-auto">
                 Administración del sistema</h1>
             </div>
+            {% if mensaje %}
+            <div class="alert alert-success" role="alert">
+              {{ mensaje }}
+            </div>
+            {% endif %}
             <table class="table col-12">
-              
+
               <thead>
                 <tr>
                   <th scope="col">Imagen</th>
@@ -92,25 +97,30 @@
               </thead>
               <tbody>
                 {% for i in productos %}
-                  <tr>
-                    <td><img src="{% static i.imagen_prod %}" style="width: 30%;"</td>
-                    <td>{{ i.nombre_producto }}</td>
-                    <td>{{ i.descripcion_prod }}</td>
-                    <td>{{ i.valor_prod }}</td>
-                    <td>{{ i.id_tipo_producto }}</td>
-                    <td><a class="btn btn-primary w-100 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}" id="botonEliminarFila" type="button">Eliminar</a></td>
-                    <td><a class="btn btn-primary w-100 mb-5" href="{% url 'modificarProducto' pk=i.id_producto %}" id="botonModificarFila" type="button">Modificar</a></td>
-                  </tr>
-                  {% endfor %}
+                <tr>
+                  <td><img src="{% static i.imagen_prod %}" style="width: 30%;" </td>
+                  <td>{{ i.nombre_producto }}</td>
+                  <td>{{ i.descripcion_prod }}</td>
+                  <td>{{ i.valor_prod }}</td>
+                  <td>{{ i.id_tipo_producto }}</td>
+                  <td><a class="btn btn-primary w-100 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}"
+                      id="botonEliminarFila" type="button">Eliminar</a></td>
+                  <td><a class="btn btn-primary w-100 mb-5" href="{% url 'modificarProducto' pk=i.id_producto %}"
+                      id="botonModificarFila" type="button">Modificar</a></td>
+                </tr>
+                {% endfor %}
               </tbody>
             </table>
-            
-            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center d-flex" style="margin: 0 auto;">
-              <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar Nuevo Producto</a>
-            </div>            
+
+            <div
+              class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center d-flex"
+              style="margin: 0 auto;">
+              <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar
+                Nuevo Producto</a>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </form>
   </section>
@@ -120,7 +130,7 @@
   <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline;">
     <div class="container">
       <br>
-      <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
+      <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023
         <a href="/admin">Ir a la página de administración</a>
       </p>
     </div>

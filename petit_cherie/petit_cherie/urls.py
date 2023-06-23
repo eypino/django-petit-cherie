@@ -38,11 +38,7 @@ urlpatterns = [
     path('recuperar_contrasena',recuperarContrasena,name='recuperarContrasena'),
     path('recuperar_cuenta',recuperarCuenta,name='recuperarCuenta'),
     path('insercion',agregarProducto,name='agregarProducto'),
-<<<<<<< HEAD
     path('modificarProducto/<int:pk>/', modificarProducto, name='modificarProducto'),
-=======
-    path('editar',modificarProducto,name='editar'),
->>>>>>> 515fb38448fd2042b9953cd43e56e2fc6801388f
     path('eliminar/<int:pk>/', eliminarProducto, name='eliminarProducto'),
     path('administracion',administracion,name='administracion'),
 ]
