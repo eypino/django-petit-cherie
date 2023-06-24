@@ -67,67 +67,66 @@
   </header>
 
   <section class="col-12 full-width align-items-center justify-content-center" style="margin-bottom: 60px;">
-    <center>
 
-      <form action="" onsubmit="" id="formaReg" class="mx-auto">
-        <div
-          class="container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 full-width align-items-center justify-content-center mt-5 bg-white rounded shadow "
-          id="divFormaReg">
-          <div class="row col-12 align-items-center justify-content-center">
+    <form action="" onsubmit="" id="formaReg" class="mx-auto">
+      <div
+        class="container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 full-width align-items-center justify-content-center mt-5 bg-white rounded shadow "
+        id="divFormaReg">
+        <div class="row col-12 align-items-center justify-content-center">
+          <div class="text-center mt-3 col-12 align-items-center justify-content-center">
             <div class="text-center mt-3 col-12 align-items-center justify-content-center">
-              <div class="text-center mt-3 col-12 align-items-center justify-content-center">
-                <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
-                <h1 class="text-center mx-auto">
-                  Administración del sistema</h1>
-              </div>
+              <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
+              <h1 class="text-center mx-auto">
+                Administración del sistema</h1>
+            </div>
 
-              {% if mensaje %}
-              <div class="alert alert-success" role="alert">
-                {{ mensaje }}
-              </div>
-              {% endif %}
-              <div class="table-responsive">
-                <table class="table align-items-center justify-content-center">
+            {% if mensaje %}
+            <div class="alert alert-success" role="alert">
+              {{ mensaje }}
+            </div>
+            {% endif %}
+            <div class="table-responsive">
+              <table class="table align-items-center justify-content-center">
 
-                  <thead>
-                    <tr>
-                      <th class="col-2" scope="col">Imagen</th>
-                      <th class="col-2" scope="col">Producto</th>
-                      <th class="col-2" scope="col">Descripción</th>
-                      <th class="col-2" scope="col">Precio</th>
-                      <th class="col-2" scope="col">Sección</th>
-                      <th class="col-2" scope="col">Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for i in productos %}
-                    <tr>
-                      <td class="col-2"><img src="{% static i.imagen_prod %}" style="width: 30%;"></td>
-                      <td class="col-2">{{ i.nombre_producto }}</td>
-                      <td class="col-2">{{ i.descripcion_prod }}</td>
-                      <td class="col-2">{{ i.valor_prod }}</td>
-                      <td class="col-2">{{ i.id_tipo_producto }}</td>
-                      <td class="col-2">
-                        <a class="btn btn-primary w-100 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}"
-                          id="botonEliminarFila" type="button">Eliminar</a>
-                        <a class="btn btn-primary w-100 mb-5" href="{% url 'modificarProducto' pk=i.id_producto %}"
-                          id="botonModificarFila" type="button">Modificar</a>
-                      </td>
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-    </center>
-    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center d-flex"
-      style="margin: 0 auto;">
-      <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar
-        Nuevo Producto</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+                <thead>
+                  <tr>
+                    <th class="col-2" scope="col">Imagen</th>
+                    <th class="col-2" scope="col">Producto</th>
+                    <th class="col-2" scope="col">Descripción</th>
+                    <th class="col-2" scope="col">Precio</th>
+                    <th class="col-2" scope="col">Sección</th>
+                    <th class="col-2" scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in productos %}
+                  <tr>
+                    <td class="col-2"><img src="{% static i.imagen_prod %}" style="width: 30%;"></td>
+                    <td class="col-2">{{ i.nombre_producto }}</td>
+                    <td class="col-2">{{ i.descripcion_prod }}</td>
+                    <td class="col-2">{{ i.valor_prod }}</td>
+                    <td class="col-2">{{ i.id_tipo_producto }}</td>
+                    <td class="col-2">
+                      <a class="btn btn-primary w-100 mb-5" href="{% url 'eliminarProducto' pk=i.id_producto %}"
+                        id="botonEliminarFila" type="button">Eliminar</a>
+                      <a class="btn btn-primary w-100 mb-5" href="{% url 'modificarProducto' pk=i.id_producto %}"
+                        id="botonModificarFila" type="button">Modificar</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center d-flex"
+              style="margin: 0 auto;">
+              <a class="btn btn-dark w-75" href="{% url 'agregarProducto' %}" id="botonBorrarReg" type="reset">Insertar
+                Nuevo Producto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
     </form>
   </section>
 
