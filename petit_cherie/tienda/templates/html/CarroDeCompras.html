@@ -65,38 +65,13 @@
         </nav>
       </header>
 
-    <section class="container w-100 mt-5 bg-white rounded shadow ">
+    <section class="container w-100 mt-5 bg-white rounded shadow " style="margin-bottom: 10%;">
         <br><br><br>
-        <table class="table table-light table-hover">
-            <thead>
-                <tr class="text-carrito">
-                    <th scope="col">#</th>
-                    <th scope="col">Productos</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Cantidad</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="table-productos">
-                        <img src="{% static 'img/img1.jpg'%}" alt="Blackberry Cupcake" class="img-carrito">
-                        <h4 class="title">Blackberry Cupcake</h4>
-                    </td>
-                    <td class="table-precio">
-                        <p>$2000</p>
-                    </td>
-                    <td class="table-cantidad">
-                        <input type="number" min="0" value="1" style="max-width: 60px;">
-                        <button class="delete btn btn-danger">X</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        {% include "html/carro/widget.html" %}
         <br><br>
         <div class="row mx-4">
             <div class="col">
-                <h3 class="itemCartTotal text-carrito">Total: $0</h3>
+                <h3 class="itemCartTotal text-carrito">Total: ${{valor_total_carro}}</h3>
             </div>
             <div class="col d-flex justify content-end">
                 <button class="btn btn-dark">Pagar</button>
