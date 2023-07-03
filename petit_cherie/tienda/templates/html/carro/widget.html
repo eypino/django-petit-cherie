@@ -1,0 +1,42 @@
+<section class="container w-100 mt-5 bg-white rounded shadow ">
+    <br><br><br>
+    <table class="table table-light table-hover">
+        <thead>
+            <tr class="text-carrito">
+                <th scope="col">#</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.carro.items %}
+                {% for key, value in request.session.carro.items %}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td class="table-productos">
+                            <img src="{{value.imagen}}" alt="Blackberry Cupcake" class="img-carrito">
+                            <h4 class="title">{{value.nombre}}</h4>
+                        </td>
+                        <td class="table-precio">
+                            <p>${{value.precio}}</p>
+                        </td>
+                        <td class="table-cantidad">
+                            <input type="number" min="0" value="{{value.cantidad}}" style="max-width: 60px;">
+                            <a class="delete btn btn-danger" type="button" href="{%url 'carro:eliminarCarrito' value.producto_id %}">X</a>
+                            <a class="delete btn btn-danger" type="button" href="{%url 'carro:restarCarrito' value.producto_id %}">-</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">
+                    <div class="alert alert-danger text-center">
+                        No hay productos en su carro.
+                    </div>
+                </td>
+            </tr>
+
+            {% endif %}
+        </tbody>
+    </table>

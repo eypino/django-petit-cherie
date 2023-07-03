@@ -76,8 +76,8 @@
                                 <h5 class="card-title">{{ n.nombre_producto }}</h5>
                                 <p class="card-text">{{ n.descripcion_prod }}<br>
                                     ${{ n.valor_prod }} por unidad</p>
-                                <button type="button" class="btn btn-outline-danger">Añadir</button>
-                            </div>
+                                    <a type="button" class="btn btn-outline-danger" href="{% url 'carro:agregarCarrito' producto_id=n.id_producto %}" >Añadir</a>
+                            </div>    
                         </div>
                     </div>
                     {% endif %}
