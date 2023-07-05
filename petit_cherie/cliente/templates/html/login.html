@@ -41,6 +41,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
                   <li class="nav-item">
+                    
                     <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
                   </li>
                   <li class="nav-item">
@@ -60,8 +61,12 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
                   </li>
-                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
-                    Sesión</a>
+                  {% if request.user.is_authenticated %}
+                  <li class="text-white  mx-2">{{ user.username | upper}}</li>
+                  <a href="{% url 'exit' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Cerrar Sesión</a>
+                  {% else %}
+                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar Sesión</a>
+                  {% endif %}
                 </ul>
               </div>
             </div>
@@ -81,17 +86,17 @@
           <h2 class="fw-bold text-center py-5">Bienvenido</h2>
           <h4 class="fw-bold text-center py-0">Inicia tu sesión para continuar</h2>
             <!--LOGIN-->
-            <form action="#">
-
+            <form action="#" method="POST">
+              {% csrf_token %}
               <div class="mb-4 mt-5">
                 <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" name="email" id="emailLogin">
+                <input type="email" class="form-control" name="correo" id="emailLogin">
                 <div class="error-message" id="emailError"></div>
               </div>
 
               <div class="mb-4">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" name="password" id="passwordLogin">
+                <input type="password" class="form-control" name="contraseña" id="passwordLogin">
                 <div class="error-message" id="passwordError"></div>
               </div>
 

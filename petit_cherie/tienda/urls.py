@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 
 from tienda.views import *
 from carro.views import *
+from cliente.views import *
 
 	
 
@@ -27,6 +28,7 @@ urlpatterns = [
     path('eliminar/<int:pk>/', eliminarProducto, name='eliminarProducto'),
     path('administracion',administracion,name='administracion'),
     path('carro/', include('carro.urls'))
+    path('logout/',exit,name='exit')
 ]
 
 if settings.DEBUG:
