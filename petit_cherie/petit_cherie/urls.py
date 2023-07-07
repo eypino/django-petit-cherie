@@ -31,7 +31,7 @@ urlpatterns = [
     path('carrito',carrito,name='carrito'),
     path('login',login,name='login'),
     path('tienda',tienda,name='tienda'),
-    path('registro',registro,name='registro'),
+    path('registro',register,name='registro'),
     path('tienda/panaderia',panaderia,name='panaderia'),
     path('tienda/pasteleria',pasteleria,name='pasteleria'),
     path('tienda/tortas',tortas,name='tortas'),
@@ -43,8 +43,9 @@ urlpatterns = [
     path('eliminar/<int:pk>/', eliminarProducto, name='eliminarProducto'),
     path('administracion',administracion,name='administracion'),
     path('carro/', include('carro.urls')),
-    path('',exit,name='exit')
+    path('logout/',exit,name='exit'),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

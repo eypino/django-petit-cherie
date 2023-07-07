@@ -1,7 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-
+  {% load crispy_forms_tags %}
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -76,78 +76,20 @@
 
   <!--FORMA DE REGISTRO-->
   <section style="margin-bottom: 60px;">
-    <form action="" onsubmit="" id="formaReg" class="mx-auto" method="POST">
+    
+    <form id="register-form" action="" method="post">
+      {% csrf_token %}
+  
+      <div class="card mx-auto" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">Complete todos los campos</h5>
+          {{ form | crispy }}
+          
+          <button class="btn btn-sm btn-primary float-end" type="submit">Registrarse</button>
+        </div>
+      </div>
+  
       
-      <div class="container w-100 mt-5 bg-white rounded shadow " id="divFormaReg">
-        <div class="row align-items-center">
-          <div class="text-center mt-3">
-            <img src="{% static 'img/Le petit emma.png' %}" width="120" alt="imagenLogo">
-          </div>
-          <h1 class="text-center mx-auto">Registro de clientes</h1>
-          <!--NOMBRES-->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Nombre</label>
-            <input class="w-75 form-control" type="text" name="Nombres" id="nombreReg"
-              placeholder="Ingrese su primer y segundo nombre">
-          </div>
-          <!--APELLIDOS -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Apellido</label>
-            <input class="w-75 form-control" type="text" name="Apellidos" id="apellidoReg"
-              placeholder="Ingrese su primer y segundo apellido">
-          </div>
-          <!--RUT -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Rut</label>
-            <input class="w-75 form-control text-start" type="text" name="Rut" id="rutReg"
-              placeholder="Ingrese su rut sin puntos">
-          </div>
-          <!--CORREO -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75" for="email">Correo Electrónico</label>
-            <input class="w-75 form-control text-start" type="email" name="email" id="correoReg"
-              placeholder="Ingrese su correo electrónico">
-          </div>
-          <!--FECHA DE NACIMIENTO -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Fecha de nacimiento</label>
-            <input class="w-75 form-control text-start" type="date" name="fechaNac" id="fechaNac">
-          </div>
-          <!--TELEFONO -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Teléfono</label>
-            <input class="w-75 form-control text-start" type="number" name="fono" id="fonoReg" placeholder="+569"
-              value="" min="" max="">
-          </div>
-          <!--CONTRASEÑA 1 -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Contraseña</label>
-            <input class="w-75 form-control text-start" type="password" name="password1" id="contrasena1"
-              placeholder="Ingrese su contraseña">
-          </div>
-          <!--CONTRASEÑA 2 -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Contraseña 2</label>
-            <input class="w-75 form-control text-start" type="password" name="password2" id="contrasena2"
-              placeholder="Ingrese su contraseña nuevamente">
-          </div>
-          <!--DIRECCION -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-            <label class="w-75">Dirección</label>
-            <input class="w-75 form-control text-start " type="text" name="direccion" id="direccion"
-              placeholder="Ingrese su dirección">
-          </div>
-          <!--GENERO -->
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-            <label class="w-75">Género</label>
-            <select class="form-select w-75 text-start" name="genero" id="genero">
-              <option selected>Elija su género</option>
-              <option>Masculino</option>
-              <option>Femenino</option>
-              <option>Otro</option>
-              <option>Prefiero no decir</option>
-            </select>
-
             <!--TERMINOS Y CONDICIONES -->
             <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
               <input type="checkbox" name="acepto" class="form-check-input text-start" id="terminos">
