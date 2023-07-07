@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
-from django.contrib.auth import authenticate, login as auth_login  # Rename the login function
+from django.contrib.auth import authenticate, login as auth_login  
 
-def login_view(request):  # Rename the login function
+def login_view(request):  
     context = {}
     return render(request, 'registration/login.html', context)    
 
@@ -19,7 +19,7 @@ def recuperarCuenta(request):
 @login_required
 def exit(request):
     logout(request)
-    return redirect('')
+    return redirect('index')
 
 def register(request):
     data = {
@@ -33,7 +33,7 @@ def register(request):
             user_creation_form.save()
 
             user = authenticate(username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
-            auth_login(request, user)  # Call the renamed login function
+            auth_login(request, user)  
             return redirect('index')
         else:
             data['form'] = user_creation_form
