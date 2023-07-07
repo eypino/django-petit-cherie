@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index,name='index'),
     path('carrito',carrito,name='carrito'),
-    path('login',login,name='login'),
+    path('login',login_view,name='login'),
     path('tienda',tienda,name='tienda'),
     path('registro',register,name='registro'),
     path('tienda/panaderia',panaderia,name='panaderia'),

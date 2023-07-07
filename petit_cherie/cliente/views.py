@@ -1,29 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as auth_login  # Rename the login function
 
-# Create your views here.
-def login(request):
-    context={}
-    return render(request,'registration/login.html', context)    
-
-  
+def login_view(request):  # Rename the login function
+    context = {}
+    return render(request, 'registration/login.html', context)    
 
 def recuperarContrasena(request):
-    context={}
-    return render(request,'html/recuperarContrasena.html', context) 
+    context = {}
+    return render(request, 'html/recuperarContrasena.html', context) 
 
 def recuperarCuenta(request):
-    context={}
-    return render(request,'html/recuperarCuenta.html', context)
+    context = {}
+    return render(request, 'html/recuperarCuenta.html', context)
     
 @login_required
 def exit(request):
     logout(request)
     return redirect('')
-
 
 def register(request):
     data = {
@@ -37,8 +33,8 @@ def register(request):
             user_creation_form.save()
 
             user = authenticate(username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
-            login(request, user)
-            return redirect('home')
+            auth_login(request, user)  # Call the renamed login function
+            return redirect('index')
         else:
             data['form'] = user_creation_form
 
