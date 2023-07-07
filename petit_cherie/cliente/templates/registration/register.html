@@ -75,7 +75,7 @@
       </header>
 
   <!--FORMA DE REGISTRO-->
-  <section style="margin-bottom: 60px;">
+  <section style="margin-bottom: 60px;margin-top: 30px;">
     
     <form id="register-form" action="" method="post">
       {% csrf_token %}
@@ -86,97 +86,89 @@
           {{ form | crispy }}
           
           <button class="btn btn-sm btn-primary float-end" type="submit">Registrarse</button>
+          <!--TERMINOS Y CONDICIONES -->
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
+            <input type="checkbox" name="acepto" class="form-check-input text-start" id="terminos">
+            <label for="acepto" class="form-check-label"><a href="#" data-bs-toggle="modal"
+                data-bs-target="#modalTerminos">Términos y condiciones</a></label>
+          </div>
+          <div class="modal fade " id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalTerminosLabel">Términos y condiciones</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h4>Registro de cuenta</h4>
+                  <ul>
+                    <li>Para registrarse en nuestro sitio web y utilizar nuestros servicios en línea, los clientes
+                      deben proporcionar información personal verdadera y precisa. La información de registro debe
+                      incluir su nombre completo, dirección de correo electrónico y dirección de envío. El registro de
+                      una cuenta implica la aceptación de estos términos y condiciones.</li>
+                  </ul>
+
+                  <h4>Privacidad</h4>
+                  <ul>
+                    <li>La información personal del cliente será tratada con absoluta confidencialidad y se utilizará
+                      únicamente para procesar pedidos y mejorar la experiencia del cliente en nuestro sitio web. No
+                      se compartirá con terceros, a menos que sea requerido por ley.</li>
+                  </ul>
+
+                  <h4>Seguridad de la cuenta</h4>
+                  <ul>
+                    <li>Es responsabilidad del cliente mantener la confidencialidad de su información de inicio de
+                      sesión y proteger su cuenta de accesos no autorizados. La pastelería no será responsable de
+                      cualquier daño o pérdida causada por el uso no autorizado de una cuenta.</li>
+                  </ul>
+
+                  <h4>Pedidos</h4>
+                  <ul>
+                    <li>Todos los pedidos realizados en nuestro sitio web están sujetos a disponibilidad de stock y
+                      verificación de pago. Nos reservamos el derecho de cancelar cualquier pedido por cualquier
+                      motivo, incluyendo pero no limitado a errores de precios, errores tipográficos o falta de stock.
+                    </li>
+                  </ul>
+
+                  <h4>Precios y pagos</h4>
+                  <ul>
+                    <li>Los precios de nuestros productos se muestran en nuestra página web y están sujetos a cambios
+                      sin previo aviso. Los clientes pueden realizar pagos en línea utilizando los métodos de pago
+                      disponibles en nuestro sitio web. Todos los pagos son procesados de forma segura y cumplen con
+                      los estándares de seguridad de la industria.</li>
+                  </ul>
+
+                  <h4>Envío y entrega</h4>
+                  <ul>
+                    <li>Ofrecemos envío a domicilio en ciertas áreas, sujeto a cargos adicionales. Los plazos de
+                      entrega son estimados y pueden variar dependiendo de la disponibilidad de stock y las
+                      condiciones del envío. Nos esforzamos por cumplir con los plazos de entrega estimados, pero no
+                      nos hacemos responsables de cualquier retraso en la entrega causado por circunstancias fuera de
+                      nuestro control.</li>
+                  </ul>
+
+                  <h4>Cambios y devoluciones</h4>
+                  <ul>
+                    <li>Si el cliente recibe un producto defectuoso o incorrecto, debe notificarlo a la pastelería
+                      dentro de las 24 horas de haber recibido el producto. La pastelería se reserva el derecho de
+                      reemplazar o reembolsar cualquier producto defectuoso o incorrecto, sujeto a nuestra discreción.
+                      No se aceptan cambios o devoluciones de productos personalizados.</li>
+
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
   
       
-            <!--TERMINOS Y CONDICIONES -->
-            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-3 justify-content-center">
-              <input type="checkbox" name="acepto" class="form-check-input text-start" id="terminos">
-              <label for="acepto" class="form-check-label"><a href="#" data-bs-toggle="modal"
-                  data-bs-target="#modalTerminos">Términos y condiciones</a></label>
-            </div>
-            <div class="modal fade " id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalTerminosLabel">Términos y condiciones</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <h4>Registro de cuenta</h4>
-                    <ul>
-                      <li>Para registrarse en nuestro sitio web y utilizar nuestros servicios en línea, los clientes
-                        deben proporcionar información personal verdadera y precisa. La información de registro debe
-                        incluir su nombre completo, dirección de correo electrónico y dirección de envío. El registro de
-                        una cuenta implica la aceptación de estos términos y condiciones.</li>
-                    </ul>
-
-                    <h4>Privacidad</h4>
-                    <ul>
-                      <li>La información personal del cliente será tratada con absoluta confidencialidad y se utilizará
-                        únicamente para procesar pedidos y mejorar la experiencia del cliente en nuestro sitio web. No
-                        se compartirá con terceros, a menos que sea requerido por ley.</li>
-                    </ul>
-
-                    <h4>Seguridad de la cuenta</h4>
-                    <ul>
-                      <li>Es responsabilidad del cliente mantener la confidencialidad de su información de inicio de
-                        sesión y proteger su cuenta de accesos no autorizados. La pastelería no será responsable de
-                        cualquier daño o pérdida causada por el uso no autorizado de una cuenta.</li>
-                    </ul>
-
-                    <h4>Pedidos</h4>
-                    <ul>
-                      <li>Todos los pedidos realizados en nuestro sitio web están sujetos a disponibilidad de stock y
-                        verificación de pago. Nos reservamos el derecho de cancelar cualquier pedido por cualquier
-                        motivo, incluyendo pero no limitado a errores de precios, errores tipográficos o falta de stock.
-                      </li>
-                    </ul>
-
-                    <h4>Precios y pagos</h4>
-                    <ul>
-                      <li>Los precios de nuestros productos se muestran en nuestra página web y están sujetos a cambios
-                        sin previo aviso. Los clientes pueden realizar pagos en línea utilizando los métodos de pago
-                        disponibles en nuestro sitio web. Todos los pagos son procesados de forma segura y cumplen con
-                        los estándares de seguridad de la industria.</li>
-                    </ul>
-
-                    <h4>Envío y entrega</h4>
-                    <ul>
-                      <li>Ofrecemos envío a domicilio en ciertas áreas, sujeto a cargos adicionales. Los plazos de
-                        entrega son estimados y pueden variar dependiendo de la disponibilidad de stock y las
-                        condiciones del envío. Nos esforzamos por cumplir con los plazos de entrega estimados, pero no
-                        nos hacemos responsables de cualquier retraso en la entrega causado por circunstancias fuera de
-                        nuestro control.</li>
-                    </ul>
-
-                    <h4>Cambios y devoluciones</h4>
-                    <ul>
-                      <li>Si el cliente recibe un producto defectuoso o incorrecto, debe notificarlo a la pastelería
-                        dentro de las 24 horas de haber recibido el producto. La pastelería se reserva el derecho de
-                        reemplazar o reembolsar cualquier producto defectuoso o incorrecto, sujeto a nuestra discreción.
-                        No se aceptan cambios o devoluciones de productos personalizados.</li>
-
-
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--BOTON ACEPTAR REGISTRO -->
-          </div>
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-            <button class="btn btn-primary w-75 mb-5" id="botonCompletarReg" type="button">Aceptar</button>
-          </div>
-          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5 justify-content-center">
-            <button class="btn btn-danger w-75 mb-5" id="botonBorrarReg" type="reset">Limpiar</button>
-          </div>
-        </div>
-      </div>
+            
+            
     </form>
   </section>
 

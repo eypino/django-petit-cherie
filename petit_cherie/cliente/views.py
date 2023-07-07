@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 def login(request):
     context={}
-    return render(request,'html/login.html', context)    
+    return render(request,'registration/login.html', context)    
 
   
 
@@ -42,4 +42,4 @@ def register(request):
         else:
             data['form'] = user_creation_form
 
-    return render(request, 'html/paginaRegistro.html', data)
+    return render(request, 'registration/register.html', data)

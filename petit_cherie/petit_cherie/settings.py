@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
+    'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,6 +139,6 @@ MEDIA_ROOT = BASE_DIR / 'tienda' / 'static'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL = ''
-LOGOUT_REDIRECT_ = ''
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_ = '/'
 
