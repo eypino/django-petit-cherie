@@ -1,4 +1,6 @@
 {% load static %}
+{% if request.user.is_authenticated and request.user.is_superuser %}
+  {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,13 +144,17 @@
 
   <br><br> <br>
   <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline;">
-    <div class="container">
-      <br>
-      <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023
-        <a href="/admin">Ir a la página de administración</a>
-      </p>
-    </div>
-  </footer>
+		<div class="container">
+			<br>
+			<p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
+				{% if request.user.is_superuser %}
+				<a href="{% url 'administracion' %}">Ir a la página de administración</a>
+				{% endif %}
+			</p>
+		</div>
+	</footer>
 </body>
 
 </html>
+{% endblock %}
+{% endif %}

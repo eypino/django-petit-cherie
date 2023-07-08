@@ -1,4 +1,6 @@
 {% load static %}
+{% if request.user.is_authenticated and request.user.is_superuser %}
+  {% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -133,3 +135,5 @@
 </body>
 
 </html>
+{% endblock %}
+{% endif %}

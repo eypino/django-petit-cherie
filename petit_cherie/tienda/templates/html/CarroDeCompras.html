@@ -85,8 +85,9 @@
       <div class="container">
         <br>
         <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
-          <a href="{%url 'administracion' %}">Ir a la página de administración</a>
-
+          {% if request.user.is_superuser %}
+          <a href="{% url 'administracion' %}">Ir a la página de administración</a>
+          {% endif %}
         </p>
       </div>
     </footer>
