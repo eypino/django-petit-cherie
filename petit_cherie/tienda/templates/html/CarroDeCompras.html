@@ -81,12 +81,13 @@
     </section>
 
 
-    <footer class="fixed-bottom" style="display:grid;  width:100%; align-self: baseline;">
+    <footer class="fixed-bottom" style="display:grid; width:100%; align-self:baseline;">
       <div class="container">
         <br>
-        <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023 
-          <a href="{%url 'administracion' %}">Ir a la página de administración</a>
-
+        <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023
+          {% if request.user.is_staff %}
+          <a href="{% url 'administracion' %}">Ir a la página de administración</a>
+          {% endif %}
         </p>
       </div>
     </footer>
