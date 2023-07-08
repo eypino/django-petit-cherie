@@ -1,5 +1,5 @@
 {% load static %}
-{% if request.user.is_authenticated and request.user.is_superuser %}
+{% if request.user.is_authenticated and request.user.is_staff %}
   {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -136,4 +136,10 @@
 
 </html>
 {% endblock %}
+{% else %}
+  {% if not request.user.is_authenticated %}
+    <meta http-equiv="refresh" content="0;url={% url 'index' %}">
+  {% else %}
+    <h1>No tienes permisos para acceder a esta página.</h1>
+  {% endif %}
 {% endif %}
