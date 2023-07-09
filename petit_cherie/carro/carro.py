@@ -13,7 +13,7 @@ class Carro:
             self.carro[str(producto.id_producto)] = {
                 "producto_id": producto.id_producto,
                 "nombre": producto.nombre_producto,
-                "precio": str(producto.valor_prod),
+                "precio": int(producto.valor_prod),  # Convertir a entero
                 "cantidad": 1,
                 "imagen": producto.imagen_prod.url
             }
@@ -21,9 +21,10 @@ class Carro:
             for key, value in self.carro.items():
                 if key == str(producto.id_producto):
                     value["cantidad"] += 1
-                    value["precio"]=int(value["precio"])+producto.valor_prod
+                    value["precio"] += int(producto.valor_prod)  # Convertir a entero
                     break
         self.guardar_carro()
+
 
     def guardar_carro(self):
         self.session["carro"]=self.carro
@@ -37,12 +38,15 @@ class Carro:
 
 
     def restar_producto(self, producto):
-        for key, value in self.carro.items():
-            if key==str(producto.id_producto):
-                value["cantidad"]=value["cantidad"]-1
-                value["precio"]=int(value["precio"])-producto.valor_prod
-                break
-        self.guardar_carro()
+        producto_id = str(producto.id_producto)
+        if producto_id in self.carro:
+            self.carro[producto_id]["cantidad"] -= 1
+            self.carro[producto_id]["precio"] = int(self.carro[producto_id]["precio"]) - producto.valor_prod
+
+            if self.carro[producto_id]["cantidad"] == 0:
+                del self.carro[producto_id]
+            
+            self.guardar_carro()
 
     def limpiar_carro(self):
         self.session["carro"]={}

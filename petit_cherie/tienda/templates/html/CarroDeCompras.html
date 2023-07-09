@@ -3,98 +3,108 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description"
-        content="Le Petit Cherie es una tienda de Pastelería Norteamericana ubicada en la Región de los Lagos en la ciudad de Puerto Montt" />
-    <meta name="Autor" content="Eyleen Collado - Marco Hernández - Marco Bombalas" />
-    <title>Carro de Compras - Panadería y Pastelería Le Petit Cherie</title>
-    <link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description"
+    content="Le Petit Cherie es una tienda de Pastelería Norteamericana ubicada en la Región de los Lagos en la ciudad de Puerto Montt" />
+  <meta name="Autor" content="Eyleen Collado - Marco Hernández - Marco Bombalas" />
+  <title>Carro de Compras - Panadería y Pastelería Le Petit Cherie</title>
+  <link rel="icon" type="image/x-icon" href='{% static "img/Le petit emma.png" %}'>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body class="body-background2">
-    <header class="header-visible">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
-          <div class="container col-12">
-            <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
-              <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
-                class="d-inline-block align-text-top">
-            </div>
-            <div
-              class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
-              <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon text-center"></span>
-              </button>
-            </div>
-            <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Comprar
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
-                        <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
-                        <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
-                  </li>
-                  <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Iniciar
-                    Sesión</a>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-    <section class="container w-100 mt-5 bg-white rounded shadow " style="margin-bottom: 10%;">
-        <br><br><br>
-        {% include "html/carro/widget.html" %}
-        <br><br>
-        <div class="row mx-4">
-            <div class="col">
-                <h3 class="itemCartTotal text-carrito">Total: ${{valor_total_carro}}</h3>
-            </div>
-            <div class="col d-flex justify content-end">
-                <button class="btn btn-dark">Pagar</button>
-            </div>
+  <header class="header-visible">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark ">
+      <div class="container col-12">
+        <div class="container col-xs-12 col-sm-2 col-md-3 col-lg-2 col-xl-2 col-xxl-2 text-center">
+          <img src="{%static 'img/Le petit emma.png' %}" alt="logo petit cherie" width="120" height="120"
+            class="d-inline-block align-text-top">
         </div>
-        <br><br>
-    </section>
-
-
-    <footer class="fixed-bottom" style="display:grid; width:100%; align-self:baseline;">
-      <div class="container">
-        <br>
-        <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023
-          {% if request.user.is_staff %}
-          <a href="{% url 'administracion' %}">Ir a la página de administración</a>
-          {% endif %}
-        </p>
+        <div
+          class="container col-xs-12-text-center col-sm-10-text-center col-md-9-text-center col-lg-3-blockquote col-xl-3-blockquote col-xxl-3-blockquote text-center">
+          <a class="navbar-brand fw-bold" href="{% url 'index' %}">Le Petit Cherie</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-center"></span>
+          </button>
+        </div>
+        <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-7 text-center">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}"> Inicio </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'quienesSomos' %}"> Quiénes Somos </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Comprar
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'panaderia' %}">Panadería</a></li>
+                  <li><a class="dropdown-item" href="{% url 'pasteleria' %}">Cupcakes</a></li>
+                  <li><a class="dropdown-item" href="{% url 'tortas' %}">Tortas</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'carrito' %}">Carro</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <span class="nav-link text-white mx-2">{{ user.username|upper }}</span>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'exit' %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">Cerrar
+                  Sesión</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a href="{% url 'login' %}" class="btn btn-dark" tabindex="-1" role="button"
+                  aria-disabled="true">Iniciar Sesión</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
       </div>
-    </footer>
+    </nav>
+  </header>
+  <section class="mt-md-40 mt-md-2 mb-20">
+    <br>
+    {% include "html/carro/widget.html" %}
+    <br><br>
+    <div class="row mx-4">
+        <div class="col">
+            <h3 class="itemCartTotal text-carrito mb-20">Total: ${{valor_total_carro}}</h3>
+        </div>
+        <div class="col d-flex justify-content-end mb-20">
+            <button class="btn btn-dark">Pagar</button>
+        </div>
+    </div>
+    <br><br><br><br>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+  <footer class="fixed-bottom" style="display:grid; width:100%; align-self:baseline;">
+    <div class="container">
+      <br>
+      <p class="small">&copy; Todos los derechos reservados :: Le Petit Cherie :: Chile 2023
+        {% if request.user.is_staff %}
+        <a href="{% url 'administracion' %}">Ir a la página de administración</a>
+        {% endif %}
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
