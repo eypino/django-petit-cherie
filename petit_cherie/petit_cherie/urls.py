@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 from tienda.views import *
 from carro.views import *
 from cliente.views import *
+from administracion.views import *
 	
 
 urlpatterns = [
